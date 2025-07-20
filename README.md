@@ -68,7 +68,7 @@
 
 ## 🚀 **Live Demo**
 
-Visit the MOST BEAUTIFUL love website: [https://roshanshrestha1.github.io/love/](https://roshanshrestha1.github.io/Love/)
+Visit the MOST BEAUTIFUL love website: [https://roshanshrestha1.github.io/Love/](https://roshanshrestha1.github.io/Love/)
 
 ## 📁 **Project Structure**
 
