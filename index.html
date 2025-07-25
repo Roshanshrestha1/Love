@@ -812,10 +812,10 @@
 </head>
 <body>
   <!-- Loading Screen -->
-  <div class="loading" id="loading">
-    <div class="loading-content">
-      <div class="loading-heart">🐼💖🦜🌹</div>
-      <div class="loading-text">Loading Love...</div>
+  <div class="loading" id="loading" style="display:flex; align-items:center; justify-content:center;">
+    <div class="loading-content" style="text-align:center;">
+      <div id="loadingHeart" class="loading-heart" style="font-size:6rem; cursor:pointer; user-select:none; transition:transform 0.2s;">💖</div>
+      <div class="loading-text" style="margin-top:20px; font-size:1.5rem;">Click the heart to open and play music</div>
     </div>
   </div>
 
@@ -852,23 +852,15 @@
 
   <!-- Music Controls -->
   <div class="music-controls">
-    <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">
-      <i class="fas fa-music"></i>
+    <button class="music-toggle" id="musicToggle" onclick="toggleMusicPlayPause()">
+      <i class="fas fa-play"></i>
     </button>
     <input type="range" class="volume-control" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
   </div>
 
   <!-- Audio Elements -->
-  <audio id="bgMusic" loop>
+  <audio id="bgMusic" loop autoplay>
     <source src="music/lov.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Sound Effects -->
-  <audio id="clickSound" preload="auto">
-    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
-  </audio>
-  <audio id="hoverSound" preload="auto">
-    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
   </audio>
 
   <!-- Main Content -->
@@ -1211,29 +1203,33 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
 
     // Initialize everything when page loads
     window.addEventListener('load', function() {
-      // Hide loading screen
-      setTimeout(() => {
-        document.getElementById('loading').classList.add('hidden');
-      }, 3000);
+      // Show loading screen with clickable heart
+      const loading = document.getElementById('loading');
+      const loadingHeart = document.getElementById('loadingHeart');
+      loading.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
 
-      // Create floating elements
-      createFloatingElements();
-      
-      // Initialize music
-      initializeMusic();
-      
-      // Start timer
-      startTimer();
-      
-      // Initialize photo upload
-      initializePhotoUpload();
-
-      // Initialize new features
-      initParticles();
-      updateQuote();
-      
-      // Update quote every 30 seconds
-      setInterval(updateQuote, 30000);
+      loadingHeart.addEventListener('mouseenter', function() {
+        loadingHeart.style.transform = 'scale(1.2)';
+      });
+      loadingHeart.addEventListener('mouseleave', function() {
+        loadingHeart.style.transform = 'scale(1)';
+      });
+      loadingHeart.addEventListener('click', function() {
+        loading.style.display = 'none';
+        document.body.style.overflow = '';
+        // Play music first, then initialize the rest
+        const music = document.getElementById('bgMusic');
+        music.play().catch(()=>{}).finally(() => {
+          createFloatingElements();
+          initializeMusic();
+          startTimer();
+          initializePhotoUpload();
+          initParticles();
+          updateQuote();
+          setInterval(updateQuote, 30000);
+        });
+      }, { once: true });
     });
 
     // Create floating elements animation
@@ -1523,56 +1519,109 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       }
     }
 
+    // Calendar-accurate difference
+    function getCalendarDiff(start, end) {
+      let years = end.getFullYear() - start.getFullYear();
+      let months = end.getMonth() - start.getMonth();
+      let days = end.getDate() - start.getDate();
+      let hours = end.getHours() - start.getHours();
+      let minutes = end.getMinutes() - start.getMinutes();
+      let seconds = end.getSeconds() - start.getSeconds();
+
+      if (seconds < 0) {
+        seconds += 60;
+        minutes--;
+      }
+      if (minutes < 0) {
+        minutes += 60;
+        hours--;
+      }
+      if (hours < 0) {
+        hours += 24;
+        days--;
+      }
+      if (days < 0) {
+        // Go to previous month
+        let prevMonth = new Date(end.getFullYear(), end.getMonth(), 0);
+        days += prevMonth.getDate();
+        months--;
+      }
+      if (months < 0) {
+        months += 12;
+        years--;
+      }
+      return { years, months, days, hours, minutes, seconds };
+    }
+
     // Timer functionality with persistent real-time counting
     function startTimer() {
       function getNepalTime() {
-        const local = new Date();
-        const utc = local.getTime() + (local.getTimezoneOffset() * 60000);
-        return new Date(utc + (5 * 60 + 45) * 60000);
+        // Use browser's Intl API for real Nepal time
+        return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' }));
       }
 
-      function getStartTime() {
-        // Check if start time is already stored in localStorage
-        const storedStartTime = localStorage.getItem('loveStartTime');
-        
-        if (storedStartTime) {
-          // Use the stored start time
-          return new Date(parseInt(storedStartTime));
-        } else {
-          // Calculate the original start time (5 months, 8 days, 1 hour, 32 minutes ago)
-          const now = getNepalTime();
-          const start = new Date(now);
-          start.setMonth(start.getMonth() - 5);
-          start.setDate(start.getDate() - 8);
-          start.setHours(start.getHours() - 1);
-          start.setMinutes(start.getMinutes() - 32);
-          
-          // Store the start time in localStorage for persistence
-          localStorage.setItem('loveStartTime', start.getTime().toString());
-          
-          return start;
-        }
-      }
+      // Fetch timer_start.txt and parse start date
+      fetch('timer_start.txt?v=' + Date.now())
+        .then(res => res.text())
+        .then(text => {
+          let startDateStr = null;
+          text.split('\n').forEach(line => {
+            if (line.startsWith('start=')) startDateStr = line.split('=')[1].trim();
+          });
+          if (!startDateStr) {
+            startDateStr = getNepalTime().toISOString().slice(0, 19);
+          }
+          let [datePart, timePart] = startDateStr.split('T');
+          let [year, month, day] = datePart.split('-').map(Number);
+          let [hour, minute, second] = (timePart || '00:00:00').split(':').map(Number);
 
-      const startNepalTime = getStartTime();
+          // Nepal is UTC+5:45, so create the start date in Nepal time
+          const NEPAL_OFFSET_MIN = 5 * 60 + 45;
+          const utcTimestamp = Date.UTC(year, month - 1, day, hour, minute, second) - (NEPAL_OFFSET_MIN * 60 * 1000);
+          const startNepalTime = new Date(utcTimestamp);
 
-      function updateTimer() {
-        const now = getNepalTime();
-        const diff = now - startNepalTime;
+          function startAccurateTimer(startNepalTime) {
+            function updateTimer() {
+              const now = getNepalTime();
+              let diff = getCalendarDiff(startNepalTime, now);
+              if (
+                diff.years < 0 ||
+                diff.months < 0 ||
+                diff.days < 0 ||
+                diff.hours < 0 ||
+                diff.minutes < 0 ||
+                diff.seconds < 0
+              ) {
+                diff = { years: 0, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+              } else {
+                // Increment seconds by 1 to match the real clock
+                diff.seconds += 1;
+                if (diff.seconds === 60) {
+                  diff.seconds = 0;
+                  diff.minutes += 1;
+                  if (diff.minutes === 60) {
+                    diff.minutes = 0;
+                    diff.hours += 1;
+                    if (diff.hours === 24) {
+                      diff.hours = 0;
+                      diff.days += 1;
+                      // Optionally, normalize days/months/years further if needed
+                    }
+                  }
+                }
+              }
+              document.getElementById('timer').innerHTML =
+                `⏳ ${diff.years} Year 🌟 ${diff.months} Month 📅 ${diff.days} Day ⏰ ${diff.hours} Hour 🕐 ${diff.minutes} Minute ⏱ ${diff.seconds} Second and counting...`;
 
-        const seconds = Math.floor((diff / 1000) % 60);
-        const minutes = Math.floor((diff / 1000 / 60) % 60);
-        const hours = Math.floor((diff / 3600000) % 24);
-        const days = Math.floor((diff / (1000 * 60 * 60 * 24)) % 30);
-        const months = Math.floor((diff / (1000 * 60 * 60 * 24 * 30)) % 12);
-        const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+              // Calculate ms until the next full second
+              const msToNextSecond = 1000 - now.getMilliseconds();
+              setTimeout(updateTimer, msToNextSecond);
+            }
+            updateTimer();
+          }
 
-        document.getElementById("timer").innerHTML = 
-          `⏳ ${years} Year 🌟 ${months} Month 📅 ${days} Day ⏰ ${hours} Hour 🕐 ${minutes} Minute ⏱ ${seconds} Second and counting...`;
-      }
-
-      updateTimer();
-      setInterval(updateTimer, 1000);
+          startAccurateTimer(startNepalTime);
+        });
     }
 
     // Show nickname question modal before letter
@@ -1641,28 +1690,52 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
         music.volume = this.value;
       });
 
-      // Toggle music
-      window.toggleMusic = function() {
+      // Update icon based on music state
+      function updateMusicIcon() {
         if (music.paused) {
-          music.play().then(() => {
-            toggleBtn.innerHTML = '<i class="fas fa-music"></i>';
-          }).catch(() => {
-            toggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-          });
+          toggleBtn.innerHTML = '<i class="fas fa-play"></i>';
         } else {
-          music.pause();
-          toggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+          toggleBtn.innerHTML = '<i class="fas fa-pause"></i>';
         }
-      };
+      }
 
-      // Enable music on first click
-      document.body.addEventListener('click', function() {
-        if (music.paused) {
-          music.play().then(() => {
-            toggleBtn.innerHTML = '<i class="fas fa-music"></i>';
-          });
-        }
-      }, { once: true });
+      // Listen for play/pause events to update icon
+      music.addEventListener('play', updateMusicIcon);
+      music.addEventListener('pause', updateMusicIcon);
+
+      // Try to autoplay on load
+      setTimeout(() => {
+        music.play().catch(() => {
+          // Do nothing if autoplay is blocked
+        });
+        updateMusicIcon();
+      }, 500);
+
+      // Initial icon
+      updateMusicIcon();
+    }
+
+    // Single button to play/pause music
+    function toggleMusicPlayPause() {
+      const music = document.getElementById('bgMusic');
+      const toggleBtn = document.getElementById('musicToggle');
+      if (music.paused) {
+        music.play().then(() => {
+          toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
+        });
+      } else {
+        music.pause();
+        toggleBtn.innerHTML = '<i class=\'fas fa-play\'></i>';
+      }
+    }
+
+    // Called by overlay button
+    function playMusicFromOverlay() {
+      const music = document.getElementById('bgMusic');
+      const musicOverlay = document.getElementById('musicOverlay');
+      music.play().then(() => {
+        musicOverlay.style.display = 'none';
+      });
     }
 
     // Photo upload functionality
@@ -1759,9 +1832,8 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
     // Function to show current Nepal time
     function showNepalTime() {
       function getNepalTime() {
-        const local = new Date();
-        const utc = local.getTime() + (local.getTimezoneOffset() * 60000);
-        return new Date(utc + (5 * 60 + 45) * 60000);
+        // Use browser's Intl API for real Nepal time
+        return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kathmandu' }));
       }
       
       const nepalTime = getNepalTime();
@@ -1805,9 +1877,25 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       // Hide selector after choosing
       document.getElementById('languageSelector').style.display = 'none';
     }
+
+    // Play music directly from button
+    function playMusicDirect() {
+      const music = document.getElementById('bgMusic');
+      const toggleBtn = document.getElementById('musicToggle');
+      music.play().then(() => {
+        toggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+      });
+    }
   </script>
 
   <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- Sound Effects -->
+  <audio id="clickSound" preload="auto">
+    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+  </audio>
+  <audio id="hoverSound" preload="auto">
+    <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
+  </audio>
 </body>
 </html>
