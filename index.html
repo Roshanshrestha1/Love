@@ -90,14 +90,50 @@
       z-index: 10;
     }
 
-    /* Language Selector */
-    .language-selector {
+    /* Language Selector Toggle Button */
+    .lang-toggle-btn {
       position: fixed;
       top: 20px;
       right: 20px;
+      z-index: 1001;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      font-weight: 600;
+    }
+    .lang-toggle-btn:hover {
+      background: var(--rose-pink);
+      transform: scale(1.1);
+    }
+    /* Language Selector */
+    .language-selector {
+      position: fixed;
+      top: 60px;
+      right: 20px;
       z-index: 1000;
       display: flex;
+      flex-direction: column;
       gap: 10px;
+      background: rgba(255,255,255,0.15);
+      padding: 10px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 768px) {
+      .lang-toggle-btn {
+        top: 10px;
+        right: 10px;
+      }
+      .language-selector {
+        top: 50px;
+        right: 10px;
+      }
     }
 
     .lang-btn {
@@ -795,16 +831,18 @@
   <!-- Floating Elements -->
   <div class="floating-elements" id="floatingElements"></div>
 
+  <!-- Language Selector Toggle Button -->
+  <button class="lang-toggle-btn" onclick="toggleLanguageSelector()">🌐 Languages</button>
   <!-- Language Selector -->
-  <div class="language-selector">
-    <button class="lang-btn active" onclick="changeLanguage('en')">🇺🇸 EN</button>
-    <button class="lang-btn" onclick="changeLanguage('np')">🇳🇵 नेपाली</button>
-    <button class="lang-btn" onclick="changeLanguage('hi')">🇮🇳 हिंदी</button>
-    <button class="lang-btn" onclick="changeLanguage('es')">🇪🇸 Español</button>
-    <button class="lang-btn" onclick="changeLanguage('fr')">🇫🇷 Français</button>
-    <button class="lang-btn" onclick="changeLanguage('zh')">🇨🇳 中文</button>
-    <button class="lang-btn" onclick="changeLanguage('ja')">🇯🇵 日本語</button>
-    <button class="lang-btn" onclick="changeLanguage('ko')">🇰🇷 한국어</button>
+  <div class="language-selector" id="languageSelector" style="display: none;">
+    <button class="lang-btn active" onclick="changeLanguage(event, 'en')">🇺🇸 EN</button>
+    <button class="lang-btn" onclick="changeLanguage(event, 'np')">🇳🇵 नेपाली</button>
+    <button class="lang-btn" onclick="changeLanguage(event, 'hi')">🇮🇳 हिंदी</button>
+    <button class="lang-btn" onclick="changeLanguage(event, 'es')">🇪🇸 Español</button>
+    <button class="lang-btn" onclick="changeLanguage(event, 'fr')">🇫🇷 Français</button>
+    <button class="lang-btn" onclick="changeLanguage(event, 'zh')">🇨🇳 中文</button>
+    <button class="lang-btn" onclick="changeLanguage(event, 'ja')">🇯🇵 日本語</button>
+    <button class="lang-btn" onclick="changeLanguage(event, 'ko')">🇰🇷 한국어</button>
   </div>
 
   <!-- Theme Toggle -->
@@ -883,6 +921,20 @@
           <h2 id="letterHeader">💖 Letter From My Heart 💖</h2>
         </div>
         <div class="letter-text" id="letterText"></div>
+      </div>
+    </div>
+
+    <!-- Nickname Question Modal -->
+    <div class="letter-modal" id="nicknameModal" style="display:none;">
+      <div class="letter-content">
+        <button class="close-modal" onclick="closeNicknameModal()">×</button>
+        <div class="letter-header">
+          <h2>🔑 Secret Question</h2>
+        </div>
+        <div style="margin-bottom:20px; font-size:1.2rem;">You give me one sweet nickname, what is that?</div>
+        <input type="text" id="nicknameInput" placeholder="Enter nickname..." style="padding:10px; border-radius:8px; border:1px solid #ccc; width:80%; font-size:1.1rem;">
+        <div id="nicknameError" style="color:#e74c3c; margin-top:10px; min-height:24px;"></div>
+        <button style="margin-top:20px;" class="upload-btn" onclick="checkNickname()">Submit</button>
       </div>
     </div>
 
@@ -1177,7 +1229,6 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       initializePhotoUpload();
 
       // Initialize new features
-      initCustomCursor();
       initParticles();
       updateQuote();
       
@@ -1410,27 +1461,6 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
     // Auto-advance slideshow
     setInterval(nextSlide, 5000);
 
-    // Custom cursor
-    function initCustomCursor() {
-      const cursor = document.getElementById('customCursor');
-      
-      document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-      });
-      
-      // Add hover effect to interactive elements
-      const interactiveElements = document.querySelectorAll('button, .envelope, .photo-item, .lang-btn, .theme-toggle');
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          cursor.classList.add('hover');
-        });
-        el.addEventListener('mouseleave', () => {
-          cursor.classList.remove('hover');
-        });
-      });
-    }
-
     // Particle system
     function initParticles() {
       if (typeof particlesJS !== 'undefined') {
@@ -1545,15 +1575,33 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       setInterval(updateTimer, 1000);
     }
 
-    // Letter functionality
+    // Show nickname question modal before letter
     function showLetter() {
+      document.getElementById('nicknameInput').value = '';
+      document.getElementById('nicknameError').textContent = '';
+      document.getElementById('nicknameModal').style.display = 'block';
+    }
+
+    function closeNicknameModal() {
+      document.getElementById('nicknameModal').style.display = 'none';
+    }
+
+    function checkNickname() {
+      const input = document.getElementById('nicknameInput').value.trim().toLowerCase();
+      if (input === 'koila') {
+        closeNicknameModal();
+        openLetter();
+      } else {
+        document.getElementById('nicknameError').textContent = 'Remember sweetheart ❤💕🌹';
+      }
+    }
+
+    function openLetter() {
       const text = translations[currentLanguage].letterText;
       const modal = document.getElementById('letterModal');
       const letterText = document.getElementById('letterText');
-      
       modal.style.display = 'block';
       letterText.innerHTML = '';
-      
       let i = 0;
       const typing = setInterval(() => {
         if (i < text.length) {
@@ -1723,6 +1771,40 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
     // Add these functions to window for debugging (optional)
     window.resetTimer = resetTimer;
     window.showNepalTime = showNepalTime;
+
+    // Ensure all translation keys exist for all languages
+    const allKeys = [
+      'headerSubtitle', 'timerSubtitle', 'calculatorTitle', 'quotesTitle', 'letterTitle', 'letterHeader',
+      'memoriesTitle', 'uploadTitle', 'uploadSubtitle', 'uploadBtnText', 'footerText', 'letterText'
+    ];
+    Object.keys(translations).forEach(lang => {
+      allKeys.forEach(key => {
+        if (!translations[lang][key]) {
+          translations[lang][key] = translations['en'][key] || '';
+        }
+      });
+    });
+
+    // Toggle language selector
+    function toggleLanguageSelector() {
+      const selector = document.getElementById('languageSelector');
+      selector.style.display = selector.style.display === 'none' ? 'flex' : 'none';
+    }
+
+    // Improved language change function
+    function changeLanguage(event, lang) {
+      currentLanguage = lang;
+      const langBtns = document.querySelectorAll('.lang-btn');
+      langBtns.forEach(btn => btn.classList.remove('active'));
+      if (event && event.currentTarget) event.currentTarget.classList.add('active');
+      // Update all text elements
+      allKeys.forEach(key => {
+        const el = document.getElementById(key);
+        if (el) el.textContent = translations[lang][key];
+      });
+      // Hide selector after choosing
+      document.getElementById('languageSelector').style.display = 'none';
+    }
   </script>
 
   <!-- Particles.js -->
