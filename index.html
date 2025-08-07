@@ -154,14 +154,55 @@
     }
 
     /* Music Controls */
-    .music-controls {
+    .music-controls.row-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       position: fixed;
       top: 20px;
       left: 20px;
       z-index: 1000;
+      background: rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 18px 16px 14px 16px;
+      box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2);
+      min-width: 170px;
+    }
+    .music-title-row {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      text-align: center;
+      width: 100%;
+      display: block;
+    }
+    .music-btn-row {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
       gap: 10px;
+      margin-bottom: 8px;
+    }
+    .music-toggle.small-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .music-divider {
+      width: 80%;
+      border: none;
+      border-top: 1.5px solid #fff6;
+      margin: 8px 0 8px 0;
+    }
+    .music-controls input[type="range"] {
+      width: 90px;
     }
 
     .music-toggle {
@@ -222,6 +263,7 @@
       background: linear-gradient(45deg, var(--rose-pink), var(--gold), var(--parrot-green), var(--rose-red));
       background-size: 400% 400%;
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: gradientShift 3s ease-in-out infinite, fadeInDown 2s ease-out;
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
@@ -851,10 +893,20 @@
   </button>
 
   <!-- Music Controls -->
-  <div class="music-controls">
-    <button class="music-toggle" id="musicToggle" onclick="toggleMusicPlayPause()">
-      <i class="fas fa-play"></i>
-    </button>
+  <div class="music-controls row-layout">
+    <span id="currentTrackTitle" class="music-title-row"></span>
+    <div class="music-btn-row">
+      <button class="music-toggle small-btn" id="prevTrackBtn" onclick="playPrevTrack()">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button class="music-toggle small-btn" id="musicToggle" onclick="toggleMusicPlayPause()">
+        <i class="fas fa-play"></i>
+      </button>
+      <button class="music-toggle small-btn" id="nextTrackBtn" onclick="playNextTrack()">
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+    <hr class="music-divider" />
     <input type="range" class="volume-control" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
   </div>
 
@@ -1020,7 +1072,7 @@
   <div class="letter-modal" id="photoModal">
     <div class="letter-content" style="max-width: 85%; padding: 25px;">
       <button class="close-modal" onclick="closePhotoModal()">×</button>
-      <img id="modalImage" src="" alt="Memory" style="width: 100%; height: auto; border-radius: 15px;">
+      <img id="modalImage" src="images/000.jpg" alt="Memory" style="width: 100%; height: auto; border-radius: 15px;">
     </div>
   </div>
 
@@ -1031,6 +1083,9 @@
         headerSubtitle: "A love story written in the stars ✨",
         timerSubtitle: "🕰️ Time since my heart started waiting for you",
         calculatorTitle: "💕 Love Calculator 💕",
+        calculatorButton: "Calculate Love 💕",
+        name1Placeholder: "Enter first name",
+        name2Placeholder: "Enter second name",
         quotesTitle: "💭 Love Quotes 💭",
         letterTitle: "💌 Click the Letter 💌",
         letterHeader: "💖 Letter From My Heart 💖",
@@ -1303,17 +1358,14 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       loadingHeart.addEventListener('click', function() {
         loading.style.display = 'none';
         document.body.style.overflow = '';
-        // Play music first, then initialize the rest
-        const music = document.getElementById('bgMusic');
-        music.play().catch(()=>{}).finally(() => {
-          createFloatingElements();
-          initializeMusic();
-          startTimer();
-          initializePhotoUpload();
-          initParticles();
-          updateQuote();
-          setInterval(updateQuote, 30000);
-        });
+        // Play music and initialize after heart click
+        initializeMusic();
+        createFloatingElements();
+        startTimer();
+        initializePhotoUpload();
+        initParticles();
+        updateQuote();
+        setInterval(updateQuote, 30000);
       }, { once: true });
     });
 
@@ -1497,10 +1549,10 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       }
     }
 
- // Love quotes
-const loveQuotes = [
-  {
-    text: `I loved with all my heart ❤️
+    // Love quotes
+    const loveQuotes = [
+      {
+        text: `I loved with all my heart ❤️
 Though the pain tore me apart 💔
 In the darkness, I fought to stay 🌑
 But the shadows took me away 🌫️
@@ -1514,10 +1566,10 @@ If my journey ends too soon 🌠
 Look for me in the stars and moon 🌟🌙
 Remember me with love, not pain 🕯️
 Until we meet in skies again ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `My heart was full of love ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `My heart was full of love ❤️
 Yet pain tore me like a dove 💔
 In shadows deep, I tried to fight 🌑
 But darkness claimed my fading light 🌫️
@@ -1531,10 +1583,10 @@ If I leave before my time 🌠
 Find me where the stars still shine 🌟🌙
 Hold me close with tender grace 🕯️
 Until we meet in that safe place ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `I gave my love, my all, my soul ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `I gave my love, my all, my soul ❤️
 Though pain within took its toll 💔
 In darkest night, I tried to stay 🌑
 But shadows pulled my light away 🌫️
@@ -1548,10 +1600,10 @@ If I go too soon from here 🌠
 Look for me in skies so clear 🌟🌙
 Remember me with love and light 🕯️
 Until we reunite one night ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `With all my heart, I loved so true ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `With all my heart, I loved so true ❤️
 But pain inside just grew and grew 💔
 In shadows deep, I tried to stand 🌑
 But darkness took me by the hand 🌫️
@@ -1563,12 +1615,12 @@ My pain was hidden out of sight ⚡
 
 If I leave before my day 🌠
 Find me where the stars will stay 🌟🌙
-Hold me in your heart’s embrace 🕯️
+Hold me in your heart's embrace 🕯️
 Until we meet in that warm place ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `My heart was full, my love sincere ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `My heart was full, my love sincere ❤️
 But pain inside was always near 💔
 In darkest nights, I fought to stay 🌑
 But shadows slowly took my way 🌫️
@@ -1582,10 +1634,10 @@ If I leave this world too soon 🌠
 Find me beneath the shining moon 🌟🌙
 Remember me with love, not grief 🕯️
 Until we meet beyond belief ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `I loved with all my heart and soul ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `I loved with all my heart and soul ❤️
 Though pain inside took its toll 💔
 In darkest hours, I tried to fight 🌑
 But shadows stole away my light 🌫️
@@ -1599,10 +1651,10 @@ If my journey ends too soon 🌠
 Look for me in stars and moon 🌟🌙
 Hold me with love, not despair 🕯️
 Until we meet beyond the air ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `My heart was full of boundless love ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `My heart was full of boundless love ❤️
 Though pain weighed heavy from above 💔
 In darkest times, I fought to stay 🌑
 But shadows slowly pulled away 🌫️
@@ -1610,16 +1662,16 @@ But shadows slowly pulled away 🌫️
 I longed for peace, a gentle light ✨🕊️
 To carry me beyond the night 😞
 Please understand my silent pain 🫂
-My battle was more than you’d explain ⚡
+My battle was more than you'd explain ⚡
 
 If I leave before my time 🌠
 Find me where the stars still shine 🌟🌙
 Remember me with tender care 🕯️
 Until we meet beyond the air ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `I gave my heart, I gave my all ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `I gave my heart, I gave my all ❤️
 Though darkness made me stumble and fall 💔
 In shadows deep, I tried to stay 🌑
 But night would not let me find my way 🌫️
@@ -1633,10 +1685,10 @@ If I leave this world too soon 🌠
 Find me under the silver moon 🌟🌙
 Hold me close with love, not grief 🕯️
 Until we find eternal peace ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `With all my heart, I loved so deep ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `With all my heart, I loved so deep ❤️
 Though pain inside would not let me sleep 💔
 In darkest hours, I fought to stay 🌑
 But shadows slowly took me away 🌫️
@@ -1650,10 +1702,10 @@ If I go before my time 🌠
 Look for me in stars that shine 🌟🌙
 Remember me with love and light 🕯️
 Until we meet beyond the night ☁️💫`,
-    author: "Roshan SHrestha"
-  },
-  {
-    text: `I loved you with my whole heart ❤️
+        author: "Roshan SHrestha"
+      },
+      {
+        text: `I loved you with my whole heart ❤️
 Though pain tore my world apart 💔
 In darkness, I tried to hold on tight 🌑
 But shadows pulled me from the light 🌫️
@@ -1667,13 +1719,10 @@ If I leave this world too soon 🌠
 Find me beneath the glowing moon 🌟🌙
 Hold me in your heart with care 🕯️
 Until we meet beyond the air ☁️💫`,
-    author: "Roshan SHrestha"
-  }
-];
- 
-Ask ChatGPT
-", author: "Roshan SHrestha" }
-    ];
+      
+author: "Roshan SHrestha"
+     }
+     ];
 
     function updateQuote() {
       const randomQuote = loveQuotes[Math.floor(Math.random() * loveQuotes.length)];
@@ -1930,38 +1979,81 @@ Ask ChatGPT
       const music = document.getElementById('bgMusic');
       const toggleBtn = document.getElementById('musicToggle');
       const volumeSlider = document.getElementById('volumeControl');
-
-      // Set initial volume
-      music.volume = 0.5;
-
-      // Volume control
-      volumeSlider.addEventListener('input', function() {
-        music.volume = this.value;
-      });
-
-      // Update icon based on music state
-      function updateMusicIcon() {
-        if (music.paused) {
-          toggleBtn.innerHTML = '<i class="fas fa-play"></i>';
-        } else {
-          toggleBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        }
-      }
-
-      // Listen for play/pause events to update icon
-      music.addEventListener('play', updateMusicIcon);
-      music.addEventListener('pause', updateMusicIcon);
-
-      // Try to autoplay on load
-      setTimeout(() => {
-        music.play().catch(() => {
-          // Do nothing if autoplay is blocked
+      const prevBtn = document.getElementById('prevTrackBtn');
+      const nextBtn = document.getElementById('nextTrackBtn');
+      const trackTitle = document.getElementById('currentTrackTitle');
+      // Dynamically detect all mp3 files in music/ folder
+      let musicTracks = [];
+      fetch('music/')
+        .then(response => response.text())
+        .then(html => {
+          // Parse directory listing for .mp3 files
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const links = Array.from(doc.querySelectorAll('a'));
+          musicTracks = links
+            .map(link => link.getAttribute('href'))
+            .filter(href => href && href.match(/\.mp3$/i))
+            .map(href => {
+              const name = decodeURIComponent(href.replace('.mp3','').replace(/^\//,''));
+              return { src: 'music/' + href.replace(/^\//,''), title: name };
+            });
+          if (musicTracks.length === 0) {
+            trackTitle.textContent = 'No songs found';
+            return;
+          }
+          // Pick a random track on load, not repeating last played
+          let lastIndex = parseInt(localStorage.getItem('lastMusicIndex'));
+          let newIndex = Math.floor(Math.random() * musicTracks.length);
+          if (!isNaN(lastIndex) && musicTracks.length > 1) {
+            while (newIndex === lastIndex) {
+              newIndex = Math.floor(Math.random() * musicTracks.length);
+            }
+          }
+          window.musicTracks = musicTracks;
+          window.currentTrackIndex = newIndex;
+          function loadTrack(index, autoPlay = true) {
+            music.src = musicTracks[index].src;
+            trackTitle.textContent = musicTracks[index].title;
+            music.load();
+            localStorage.setItem('lastMusicIndex', index);
+            if (autoPlay) {
+              music.play().catch(()=>{});
+            }
+          }
+          // Set initial volume
+          music.volume = 0.5;
+          // Volume control
+          volumeSlider.addEventListener('input', function() {
+            music.volume = this.value;
+          });
+          // Update icon based on music state
+          function updateMusicIcon() {
+            if (music.paused) {
+              toggleBtn.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+              toggleBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            trackTitle.textContent = musicTracks[window.currentTrackIndex].title;
+          }
+          // Listen for play/pause events to update icon
+          music.addEventListener('play', updateMusicIcon);
+          music.addEventListener('pause', updateMusicIcon);
+          // Next/Prev track
+          window.playNextTrack = function() {
+            window.currentTrackIndex = (window.currentTrackIndex + 1) % musicTracks.length;
+            loadTrack(window.currentTrackIndex, true);
+            updateMusicIcon();
+          };
+          window.playPrevTrack = function() {
+            window.currentTrackIndex = (window.currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
+            loadTrack(window.currentTrackIndex, true);
+            updateMusicIcon();
+          };
+          // Initial icon and track
+          loadTrack(window.currentTrackIndex, true);
+          updateMusicIcon();
         });
-        updateMusicIcon();
-      }, 500);
-
-      // Initial icon
-      updateMusicIcon();
     }
 
     // Single button to play/pause music
@@ -1975,6 +2067,11 @@ Ask ChatGPT
       } else {
         music.pause();
         toggleBtn.innerHTML = '<i class=\'fas fa-play\'></i>';
+      }
+      // Always update the song title
+      const trackTitle = document.getElementById('currentTrackTitle');
+      if (window.currentTrackIndex !== undefined && window.musicTracks) {
+        trackTitle.textContent = window.musicTracks[window.currentTrackIndex].title;
       }
     }
 
