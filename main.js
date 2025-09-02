@@ -215,28 +215,72 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       pandaY: 50,
       score: 0,
       level: 1,
-      heartsCollected: 0,
-      heartsNeeded: 10,
+      itemsCollected: 0,
+      itemsNeeded: 8,
       gameSpeed: 1,
-      heartSpawnRate: 2000,
+      itemSpawnRate: 2000,
       highScore: localStorage.getItem('pandaGameHighScore') || 0,
       gamesPlayed: localStorage.getItem('pandaGamesPlayed') || 0,
-      totalHearts: localStorage.getItem('pandaTotalHearts') || 0,
-      currentLevel: localStorage.getItem('pandaCurrentLevel') || 1
+      totalItems: localStorage.getItem('pandaTotalItems') || 0,
+      currentLevel: localStorage.getItem('pandaCurrentLevel') || 1,
+      currentItem: null,
+      availableItems: ['heart', 'rose']
     };
 
-    // Level configurations
+    // Collectible items with different values and effects
+    const collectibleItems = {
+      // Basic items (1 point each)
+      heart: { emoji: '💖', points: 1, color: '#ff69b4', effect: 'heart' },
+      rose: { emoji: '🌹', points: 1, color: '#e74c3c', effect: 'rose' },
+      flower: { emoji: '🌸', points: 1, color: '#ff9ff3', effect: 'flower' },
+      tulip: { emoji: '🌷', points: 1, color: '#ff6b9d', effect: 'tulip' },
+      
+      // Medium items (2 points each)
+      couple: { emoji: '👫', points: 2, color: '#f39c12', effect: 'couple' },
+      kiss: { emoji: '💋', points: 2, color: '#e91e63', effect: 'kiss' },
+      ring: { emoji: '💍', points: 2, color: '#9b59b6', effect: 'ring' },
+      gift: { emoji: '🎁', points: 2, color: '#2ecc71', effect: 'gift' },
+      
+      // Rare items (3 points each)
+      wedding: { emoji: '💒', points: 3, color: '#3498db', effect: 'wedding' },
+      diamond: { emoji: '💎', points: 3, color: '#1abc9c', effect: 'diamond' },
+      star: { emoji: '⭐', points: 3, color: '#f1c40f', effect: 'star' },
+      rainbow: { emoji: '🌈', points: 3, color: '#e67e22', effect: 'rainbow' },
+      
+      // Legendary items (5 points each)
+      angel: { emoji: '👼', points: 5, color: '#ecf0f1', effect: 'angel' },
+      crown: { emoji: '👑', points: 5, color: '#f39c12', effect: 'crown' },
+      trophy: { emoji: '🏆', points: 5, color: '#e74c3c', effect: 'trophy' },
+      magic: { emoji: '✨', points: 5, color: '#9b59b6', effect: 'magic' }
+    };
+
+    // Level configurations (expanded to 25 levels)
     const levelConfigs = {
-      1: { heartsNeeded: 10, speed: 1, spawnRate: 2000, title: "🌹 First Love" },
-      2: { heartsNeeded: 15, speed: 1.2, spawnRate: 1800, title: "💕 Sweet Romance" },
-      3: { heartsNeeded: 20, speed: 1.4, spawnRate: 1600, title: "💖 Deep Connection" },
-      4: { heartsNeeded: 25, speed: 1.6, spawnRate: 1400, title: "💝 True Love" },
-      5: { heartsNeeded: 30, speed: 1.8, spawnRate: 1200, title: "💘 Eternal Bond" },
-      6: { heartsNeeded: 35, speed: 2.0, spawnRate: 1000, title: "💗 Soul Mates" },
-      7: { heartsNeeded: 40, speed: 2.2, spawnRate: 900, title: "💓 Perfect Match" },
-      8: { heartsNeeded: 45, speed: 2.4, spawnRate: 800, title: "💞 Forever Together" },
-      9: { heartsNeeded: 50, speed: 2.6, spawnRate: 700, title: "💟 Infinite Love" },
-      10: { heartsNeeded: 60, speed: 3.0, spawnRate: 600, title: "💕 Legendary Love" }
+      1: { itemsNeeded: 8, speed: 1, spawnRate: 2000, title: "🌹 First Love", items: ['heart', 'rose'] },
+      2: { itemsNeeded: 10, speed: 1.1, spawnRate: 1900, title: "💕 Sweet Romance", items: ['heart', 'rose', 'flower'] },
+      3: { itemsNeeded: 12, speed: 1.2, spawnRate: 1800, title: "💖 Deep Connection", items: ['heart', 'rose', 'flower', 'tulip'] },
+      4: { itemsNeeded: 14, speed: 1.3, spawnRate: 1700, title: "💝 True Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple'] },
+      5: { itemsNeeded: 16, speed: 1.4, spawnRate: 1600, title: "💘 Eternal Bond", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss'] },
+      6: { itemsNeeded: 18, speed: 1.5, spawnRate: 1500, title: "💗 Soul Mates", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring'] },
+      7: { itemsNeeded: 20, speed: 1.6, spawnRate: 1400, title: "💓 Perfect Match", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift'] },
+      8: { itemsNeeded: 22, speed: 1.7, spawnRate: 1300, title: "💞 Forever Together", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding'] },
+      9: { itemsNeeded: 24, speed: 1.8, spawnRate: 1200, title: "💟 Infinite Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond'] },
+      10: { itemsNeeded: 26, speed: 1.9, spawnRate: 1100, title: "💕 Legendary Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star'] },
+      11: { itemsNeeded: 28, speed: 2.0, spawnRate: 1000, title: "🌺 Garden of Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow'] },
+      12: { itemsNeeded: 30, speed: 2.1, spawnRate: 950, title: "💐 Bouquet of Dreams", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel'] },
+      13: { itemsNeeded: 32, speed: 2.2, spawnRate: 900, title: "👑 Royal Romance", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown'] },
+      14: { itemsNeeded: 34, speed: 2.3, spawnRate: 850, title: "🏆 Champion of Hearts", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy'] },
+      15: { itemsNeeded: 36, speed: 2.4, spawnRate: 800, title: "✨ Magic of Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      16: { itemsNeeded: 38, speed: 2.5, spawnRate: 750, title: "🌙 Moonlight Romance", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      17: { itemsNeeded: 40, speed: 2.6, spawnRate: 700, title: "🌅 Sunrise Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      18: { itemsNeeded: 42, speed: 2.7, spawnRate: 650, title: "🌊 Ocean of Emotions", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      19: { itemsNeeded: 44, speed: 2.8, spawnRate: 600, title: "🌌 Galaxy of Hearts", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      20: { itemsNeeded: 46, speed: 2.9, spawnRate: 550, title: "🌟 Starlight Dreams", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      21: { itemsNeeded: 48, speed: 3.0, spawnRate: 500, title: "🎆 Fireworks of Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      22: { itemsNeeded: 50, speed: 3.1, spawnRate: 450, title: "🎭 Theater of Romance", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      23: { itemsNeeded: 52, speed: 3.2, spawnRate: 400, title: "🎪 Carnival of Hearts", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      24: { itemsNeeded: 54, speed: 3.3, spawnRate: 350, title: "🎨 Art of Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
+      25: { itemsNeeded: 60, speed: 3.5, spawnRate: 300, title: "🏰 Castle of Eternal Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] }
     };
 
     // Initialize everything when page loads
@@ -2265,14 +2309,15 @@ author: "Roshan SHrestha"
     function startGame() {
       gameState.isPlaying = true;
       gameState.score = 0;
-      gameState.heartsCollected = 0;
+      gameState.itemsCollected = 0;
       gameState.level = parseInt(gameState.currentLevel);
       
       // Load level configuration
       const config = levelConfigs[gameState.level] || levelConfigs[1];
-      gameState.heartsNeeded = config.heartsNeeded;
+      gameState.itemsNeeded = config.itemsNeeded;
       gameState.gameSpeed = config.speed;
-      gameState.heartSpawnRate = config.spawnRate;
+      gameState.itemSpawnRate = config.spawnRate;
+      gameState.availableItems = config.items;
       
       // Hide instructions
       document.getElementById('gameInstructions').style.display = 'none';
@@ -2280,8 +2325,8 @@ author: "Roshan SHrestha"
       // Update UI
       updateGameUI();
       
-      // Place heart at random position
-      placeHeart();
+      // Place item at random position
+      placeItem();
     }
 
     function resetGame() {
@@ -2307,10 +2352,26 @@ author: "Roshan SHrestha"
       panda.style.top = gameState.pandaY + 'px';
     }
 
-    function placeHeart() {
-      const heart = document.getElementById('heart');
+    function placeItem() {
+      const itemElement = document.getElementById('heart'); // Reusing the heart element
       const gameBoard = document.getElementById('gameBoard');
       const boardRect = gameBoard.getBoundingClientRect();
+      
+      // Select random item from available items
+      const randomItemType = gameState.availableItems[Math.floor(Math.random() * gameState.availableItems.length)];
+      const itemData = collectibleItems[randomItemType];
+      
+      // Update the item element
+      itemElement.textContent = itemData.emoji;
+      itemElement.style.color = itemData.color;
+      itemElement.style.fontSize = '2.5rem';
+      itemElement.style.filter = 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))';
+      
+      // Store current item data
+      gameState.currentItem = {
+        type: randomItemType,
+        data: itemData
+      };
       
       // Random position within game board (accounting for element size)
       const maxX = boardRect.width - 60;
@@ -2319,8 +2380,8 @@ author: "Roshan SHrestha"
       const x = Math.floor(Math.random() * maxX);
       const y = Math.floor(Math.random() * maxY);
       
-      heart.style.left = x + 'px';
-      heart.style.top = y + 'px';
+      itemElement.style.left = x + 'px';
+      itemElement.style.top = y + 'px';
     }
 
     function handleGameKeyPress(e) {
@@ -2404,34 +2465,35 @@ author: "Roshan SHrestha"
 
     function checkCollision() {
       const panda = document.getElementById('panda');
-      const heart = document.getElementById('heart');
+      const itemElement = document.getElementById('heart');
       
       const pandaRect = panda.getBoundingClientRect();
-      const heartRect = heart.getBoundingClientRect();
+      const itemRect = itemElement.getBoundingClientRect();
       
-      // Check if panda touches heart
-      if (pandaRect.left < heartRect.right &&
-          pandaRect.right > heartRect.left &&
-          pandaRect.top < heartRect.bottom &&
-          pandaRect.bottom > heartRect.top) {
+      // Check if panda touches item
+      if (pandaRect.left < itemRect.right &&
+          pandaRect.right > itemRect.left &&
+          pandaRect.top < itemRect.bottom &&
+          pandaRect.bottom > itemRect.top) {
         
-        // Collect heart
-        gameState.score++;
-        gameState.heartsCollected++;
-        gameState.totalHearts++;
+        // Collect item
+        const itemData = gameState.currentItem.data;
+        gameState.score += itemData.points;
+        gameState.itemsCollected++;
+        gameState.totalItems += itemData.points;
         
         // Update UI
         updateGameUI();
         
-        // Create collection effect
-        createCollectionEffect(heartRect.left, heartRect.top);
+        // Create collection effect with item-specific animation
+        createCollectionEffect(itemRect.left, itemRect.top, itemData);
         
         // Check level completion
-        if (gameState.heartsCollected >= gameState.heartsNeeded) {
+        if (gameState.itemsCollected >= gameState.itemsNeeded) {
           completeLevel();
         } else {
-          // Place new heart
-          placeHeart();
+          // Place new item
+          placeItem();
         }
       }
     }
@@ -2471,7 +2533,7 @@ author: "Roshan SHrestha"
             ${config.title}
           </p>
           <div class="final-score" style="color: #ff6b9d; font-size: 1.5rem;">
-            Hearts Collected: ${gameState.heartsCollected}/${gameState.heartsNeeded}
+            Items Collected: ${gameState.itemsCollected}/${gameState.itemsNeeded}
           </div>
           <p style="font-size: 1.1rem; color: #555; margin: 20px 0;">
             Ready for the next challenge? 💕
@@ -2498,7 +2560,7 @@ author: "Roshan SHrestha"
             You've mastered all levels of love! 💕
           </p>
           <div class="final-score" style="color: #ff6b9d; font-size: 1.5rem;">
-            Total Hearts: ${gameState.totalHearts}
+            Total Points: ${gameState.totalItems}
           </div>
           <p style="font-size: 1.1rem; color: #555; margin: 20px 0;">
             You are a true love master! 🌹
@@ -2514,28 +2576,51 @@ author: "Roshan SHrestha"
       document.body.appendChild(modal);
     }
 
-    function createCollectionEffect(x, y) {
+    function createCollectionEffect(x, y, itemData) {
       const effect = document.createElement('div');
-      effect.textContent = '💖';
+      effect.textContent = itemData.emoji;
       effect.style.position = 'fixed';
       effect.style.left = x + 'px';
       effect.style.top = y + 'px';
-      effect.style.fontSize = '2rem';
+      effect.style.fontSize = '2.5rem';
+      effect.style.color = itemData.color;
       effect.style.pointerEvents = 'none';
       effect.style.zIndex = '20';
-      effect.style.animation = 'collectionEffect 1s ease-out forwards';
+      effect.style.animation = `collectionEffect${itemData.effect} 1.5s ease-out forwards`;
+      effect.style.filter = 'drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3))';
       
       document.body.appendChild(effect);
       
+      // Create multiple effects for higher value items
+      if (itemData.points >= 3) {
+        for (let i = 0; i < 3; i++) {
+          setTimeout(() => {
+            const extraEffect = document.createElement('div');
+            extraEffect.textContent = '✨';
+            extraEffect.style.position = 'fixed';
+            extraEffect.style.left = (x + Math.random() * 40 - 20) + 'px';
+            extraEffect.style.top = (y + Math.random() * 40 - 20) + 'px';
+            extraEffect.style.fontSize = '1.5rem';
+            extraEffect.style.color = '#f1c40f';
+            extraEffect.style.zIndex = '21';
+            extraEffect.style.animation = 'sparkleEffect 1s ease-out forwards';
+            extraEffect.style.pointerEvents = 'none';
+            document.body.appendChild(extraEffect);
+            
+            setTimeout(() => extraEffect.remove(), 1000);
+          }, i * 200);
+        }
+      }
+      
       setTimeout(() => {
         effect.remove();
-      }, 1000);
+      }, 1500);
     }
 
     function updateGameUI() {
       const config = levelConfigs[gameState.level] || levelConfigs[1];
-      document.getElementById('score').textContent = `Level ${gameState.level}: ${gameState.heartsCollected}/${gameState.heartsNeeded} hearts`;
-      document.getElementById('totalHearts').textContent = gameState.totalHearts;
+      document.getElementById('score').textContent = `Level ${gameState.level}: ${gameState.itemsCollected}/${gameState.itemsNeeded} items`;
+      document.getElementById('totalHearts').textContent = gameState.totalItems;
       
       // Update level title if element exists
       const levelTitle = document.getElementById('levelTitle');
