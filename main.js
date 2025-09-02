@@ -224,7 +224,9 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       totalItems: localStorage.getItem('pandaTotalItems') || 0,
       currentLevel: localStorage.getItem('pandaCurrentLevel') || 1,
       currentItem: null,
-      availableItems: ['heart', 'rose']
+      availableItems: ['heart', 'rose'],
+      difficulty: localStorage.getItem('pandaDifficulty') || 'medium',
+      boomCount: 0
     };
 
     // Collectible items with different values and effects
@@ -247,11 +249,59 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       star: { emoji: '⭐', points: 3, color: '#f1c40f', effect: 'star' },
       rainbow: { emoji: '🌈', points: 3, color: '#e67e22', effect: 'rainbow' },
       
+      // Anime characters (4 points each)
+      anime_girl: { emoji: '👧', points: 4, color: '#ff69b4', effect: 'anime', boom: true },
+      anime_boy: { emoji: '👦', points: 4, color: '#3498db', effect: 'anime', boom: true },
+      kawaii: { emoji: '😊', points: 4, color: '#ff9ff3', effect: 'kawaii', boom: true },
+      blush: { emoji: '😳', points: 4, color: '#ff6b9d', effect: 'blush', boom: true },
+      sparkles: { emoji: '✨', points: 4, color: '#f1c40f', effect: 'sparkles', boom: true },
+      love_eyes: { emoji: '🥰', points: 4, color: '#e91e63', effect: 'love_eyes', boom: true },
+      
       // Legendary items (5 points each)
       angel: { emoji: '👼', points: 5, color: '#ecf0f1', effect: 'angel' },
       crown: { emoji: '👑', points: 5, color: '#f39c12', effect: 'crown' },
       trophy: { emoji: '🏆', points: 5, color: '#e74c3c', effect: 'trophy' },
-      magic: { emoji: '✨', points: 5, color: '#9b59b6', effect: 'magic' }
+      magic: { emoji: '✨', points: 5, color: '#9b59b6', effect: 'magic' },
+      
+      // Epic anime items (8 points each) - BOOM EFFECTS!
+      anime_hero: { emoji: '🦸', points: 8, color: '#e74c3c', effect: 'hero', boom: true, megaBoom: true },
+      anime_princess: { emoji: '👸', points: 8, color: '#9b59b6', effect: 'princess', boom: true, megaBoom: true },
+      power_up: { emoji: '⚡', points: 8, color: '#f1c40f', effect: 'power', boom: true, megaBoom: true },
+      explosion: { emoji: '💥', points: 8, color: '#e67e22', effect: 'explosion', boom: true, megaBoom: true },
+      super_saiyan: { emoji: '🔥', points: 8, color: '#e74c3c', effect: 'saiyan', boom: true, megaBoom: true },
+      chibi: { emoji: '😇', points: 8, color: '#ff69b4', effect: 'chibi', boom: true, megaBoom: true }
+    };
+
+    // Difficulty levels
+    const difficultyLevels = {
+      easy: { 
+        name: '😊 Easy', 
+        speedMultiplier: 0.8, 
+        spawnRateMultiplier: 1.2, 
+        itemsNeededMultiplier: 0.7,
+        description: 'Perfect for beginners!'
+      },
+      medium: { 
+        name: '😎 Medium', 
+        speedMultiplier: 1.0, 
+        spawnRateMultiplier: 1.0, 
+        itemsNeededMultiplier: 1.0,
+        description: 'Balanced challenge!'
+      },
+      hard: { 
+        name: '🔥 Hard', 
+        speedMultiplier: 1.3, 
+        spawnRateMultiplier: 0.8, 
+        itemsNeededMultiplier: 1.3,
+        description: 'For experienced players!'
+      },
+      expert: { 
+        name: '💀 Expert', 
+        speedMultiplier: 1.6, 
+        spawnRateMultiplier: 0.6, 
+        itemsNeededMultiplier: 1.6,
+        description: 'Ultimate challenge!'
+      }
     };
 
     // Level configurations (expanded to 25 levels)
@@ -266,21 +316,21 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       8: { itemsNeeded: 22, speed: 1.7, spawnRate: 1300, title: "💞 Forever Together", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding'] },
       9: { itemsNeeded: 24, speed: 1.8, spawnRate: 1200, title: "💟 Infinite Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond'] },
       10: { itemsNeeded: 26, speed: 1.9, spawnRate: 1100, title: "💕 Legendary Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star'] },
-      11: { itemsNeeded: 28, speed: 2.0, spawnRate: 1000, title: "🌺 Garden of Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow'] },
-      12: { itemsNeeded: 30, speed: 2.1, spawnRate: 950, title: "💐 Bouquet of Dreams", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel'] },
-      13: { itemsNeeded: 32, speed: 2.2, spawnRate: 900, title: "👑 Royal Romance", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown'] },
-      14: { itemsNeeded: 34, speed: 2.3, spawnRate: 850, title: "🏆 Champion of Hearts", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy'] },
-      15: { itemsNeeded: 36, speed: 2.4, spawnRate: 800, title: "✨ Magic of Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      16: { itemsNeeded: 38, speed: 2.5, spawnRate: 750, title: "🌙 Moonlight Romance", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      17: { itemsNeeded: 40, speed: 2.6, spawnRate: 700, title: "🌅 Sunrise Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      18: { itemsNeeded: 42, speed: 2.7, spawnRate: 650, title: "🌊 Ocean of Emotions", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      19: { itemsNeeded: 44, speed: 2.8, spawnRate: 600, title: "🌌 Galaxy of Hearts", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      20: { itemsNeeded: 46, speed: 2.9, spawnRate: 550, title: "🌟 Starlight Dreams", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      21: { itemsNeeded: 48, speed: 3.0, spawnRate: 500, title: "🎆 Fireworks of Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      22: { itemsNeeded: 50, speed: 3.1, spawnRate: 450, title: "🎭 Theater of Romance", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      23: { itemsNeeded: 52, speed: 3.2, spawnRate: 400, title: "🎪 Carnival of Hearts", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      24: { itemsNeeded: 54, speed: 3.3, spawnRate: 350, title: "🎨 Art of Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] },
-      25: { itemsNeeded: 60, speed: 3.5, spawnRate: 300, title: "🏰 Castle of Eternal Love", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'rainbow', 'angel', 'crown', 'trophy', 'magic'] }
+      11: { itemsNeeded: 28, speed: 2.0, spawnRate: 1000, title: "🎌 Anime World", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl'] },
+      12: { itemsNeeded: 30, speed: 2.1, spawnRate: 950, title: "🌸 Kawaii Paradise", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy'] },
+      13: { itemsNeeded: 32, speed: 2.2, spawnRate: 900, title: "😊 Cute Characters", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii'] },
+      14: { itemsNeeded: 34, speed: 2.3, spawnRate: 850, title: "😳 Blush Moments", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush'] },
+      15: { itemsNeeded: 36, speed: 2.4, spawnRate: 800, title: "✨ Sparkle Magic", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles'] },
+      16: { itemsNeeded: 38, speed: 2.5, spawnRate: 750, title: "🥰 Love Eyes", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes'] },
+      17: { itemsNeeded: 40, speed: 2.6, spawnRate: 700, title: "🦸 Anime Heroes", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero'] },
+      18: { itemsNeeded: 42, speed: 2.7, spawnRate: 650, title: "👸 Princess Power", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero', 'anime_princess'] },
+      19: { itemsNeeded: 44, speed: 2.8, spawnRate: 600, title: "⚡ Power Up!", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero', 'anime_princess', 'power_up'] },
+      20: { itemsNeeded: 46, speed: 2.9, spawnRate: 550, title: "💥 Explosion!", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero', 'anime_princess', 'power_up', 'explosion'] },
+      21: { itemsNeeded: 48, speed: 3.0, spawnRate: 500, title: "🔥 Super Saiyan", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero', 'anime_princess', 'power_up', 'explosion', 'super_saiyan'] },
+      22: { itemsNeeded: 50, speed: 3.1, spawnRate: 450, title: "😇 Chibi Heaven", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero', 'anime_princess', 'power_up', 'explosion', 'super_saiyan', 'chibi'] },
+      23: { itemsNeeded: 52, speed: 3.2, spawnRate: 400, title: "🎌 Ultimate Anime", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero', 'anime_princess', 'power_up', 'explosion', 'super_saiyan', 'chibi'] },
+      24: { itemsNeeded: 54, speed: 3.3, spawnRate: 350, title: "🌟 Anime Master", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero', 'anime_princess', 'power_up', 'explosion', 'super_saiyan', 'chibi'] },
+      25: { itemsNeeded: 60, speed: 3.5, spawnRate: 300, title: "🏰 Anime Legend", items: ['heart', 'rose', 'flower', 'tulip', 'couple', 'kiss', 'ring', 'gift', 'wedding', 'diamond', 'star', 'anime_girl', 'anime_boy', 'kawaii', 'blush', 'sparkles', 'love_eyes', 'anime_hero', 'anime_princess', 'power_up', 'explosion', 'super_saiyan', 'chibi'] }
     };
 
     // Initialize everything when page loads
@@ -2299,11 +2349,19 @@ author: "Roshan SHrestha"
       // Update displays
       document.getElementById('highScore').textContent = gameState.highScore;
       document.getElementById('gamesPlayed').textContent = gameState.gamesPlayed;
-      document.getElementById('totalHearts').textContent = gameState.totalHearts;
+      document.getElementById('totalHearts').textContent = gameState.totalItems;
+      
+      // Setup difficulty selector
+      const difficultySelect = document.getElementById('difficultySelect');
+      difficultySelect.value = gameState.difficulty;
+      difficultySelect.addEventListener('change', function() {
+        gameState.difficulty = this.value;
+        localStorage.setItem('pandaDifficulty', this.value);
+      });
       
       // Place panda at start position
       placePanda();
-      placeHeart();
+      placeItem();
     }
 
     function startGame() {
@@ -2311,12 +2369,16 @@ author: "Roshan SHrestha"
       gameState.score = 0;
       gameState.itemsCollected = 0;
       gameState.level = parseInt(gameState.currentLevel);
+      gameState.boomCount = 0;
       
       // Load level configuration
       const config = levelConfigs[gameState.level] || levelConfigs[1];
-      gameState.itemsNeeded = config.itemsNeeded;
-      gameState.gameSpeed = config.speed;
-      gameState.itemSpawnRate = config.spawnRate;
+      const difficulty = difficultyLevels[gameState.difficulty] || difficultyLevels.medium;
+      
+      // Apply difficulty multipliers
+      gameState.itemsNeeded = Math.ceil(config.itemsNeeded * difficulty.itemsNeededMultiplier);
+      gameState.gameSpeed = config.speed * difficulty.speedMultiplier;
+      gameState.itemSpawnRate = config.spawnRate * difficulty.spawnRateMultiplier;
       gameState.availableItems = config.items;
       
       // Hide instructions
@@ -2591,6 +2653,12 @@ author: "Roshan SHrestha"
       
       document.body.appendChild(effect);
       
+      // Create boom effects for anime items
+      if (itemData.boom) {
+        gameState.boomCount++;
+        createBoomEffect(x, y, itemData);
+      }
+      
       // Create multiple effects for higher value items
       if (itemData.points >= 3) {
         for (let i = 0; i < 3; i++) {
@@ -2615,6 +2683,66 @@ author: "Roshan SHrestha"
       setTimeout(() => {
         effect.remove();
       }, 1500);
+    }
+
+    function createBoomEffect(x, y, itemData) {
+      // Create explosion effect
+      const boomEffect = document.createElement('div');
+      boomEffect.textContent = '💥';
+      boomEffect.style.position = 'fixed';
+      boomEffect.style.left = x + 'px';
+      boomEffect.style.top = y + 'px';
+      boomEffect.style.fontSize = '3rem';
+      boomEffect.style.color = '#e74c3c';
+      boomEffect.style.pointerEvents = 'none';
+      boomEffect.style.zIndex = '22';
+      boomEffect.style.animation = 'boomEffect 0.8s ease-out forwards';
+      boomEffect.style.filter = 'drop-shadow(0 0 10px rgba(231, 76, 60, 0.8))';
+      
+      document.body.appendChild(boomEffect);
+      
+      // Create multiple explosion particles
+      for (let i = 0; i < 8; i++) {
+        setTimeout(() => {
+          const particle = document.createElement('div');
+          particle.textContent = '💥';
+          particle.style.position = 'fixed';
+          particle.style.left = (x + Math.random() * 80 - 40) + 'px';
+          particle.style.top = (y + Math.random() * 80 - 40) + 'px';
+          particle.style.fontSize = '1.5rem';
+          particle.style.color = '#f39c12';
+          particle.style.zIndex = '23';
+          particle.style.animation = 'boomParticle 1s ease-out forwards';
+          particle.style.pointerEvents = 'none';
+          document.body.appendChild(particle);
+          
+          setTimeout(() => particle.remove(), 1000);
+        }, i * 50);
+      }
+      
+      // Mega boom for epic items
+      if (itemData.megaBoom) {
+        setTimeout(() => {
+          const megaBoom = document.createElement('div');
+          megaBoom.textContent = '💥💥💥';
+          megaBoom.style.position = 'fixed';
+          megaBoom.style.left = (x - 20) + 'px';
+          megaBoom.style.top = (y - 20) + 'px';
+          megaBoom.style.fontSize = '4rem';
+          megaBoom.style.color = '#e67e22';
+          megaBoom.style.pointerEvents = 'none';
+          megaBoom.style.zIndex = '24';
+          megaBoom.style.animation = 'megaBoomEffect 1.2s ease-out forwards';
+          megaBoom.style.filter = 'drop-shadow(0 0 20px rgba(230, 126, 34, 1))';
+          document.body.appendChild(megaBoom);
+          
+          setTimeout(() => megaBoom.remove(), 1200);
+        }, 200);
+      }
+      
+      setTimeout(() => {
+        boomEffect.remove();
+      }, 800);
     }
 
     function updateGameUI() {
