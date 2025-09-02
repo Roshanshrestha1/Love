@@ -214,9 +214,29 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       pandaX: 50,
       pandaY: 50,
       score: 0,
+      level: 1,
+      heartsCollected: 0,
+      heartsNeeded: 10,
+      gameSpeed: 1,
+      heartSpawnRate: 2000,
       highScore: localStorage.getItem('pandaGameHighScore') || 0,
       gamesPlayed: localStorage.getItem('pandaGamesPlayed') || 0,
-      totalHearts: localStorage.getItem('pandaTotalHearts') || 0
+      totalHearts: localStorage.getItem('pandaTotalHearts') || 0,
+      currentLevel: localStorage.getItem('pandaCurrentLevel') || 1
+    };
+
+    // Level configurations
+    const levelConfigs = {
+      1: { heartsNeeded: 10, speed: 1, spawnRate: 2000, title: "🌹 First Love" },
+      2: { heartsNeeded: 15, speed: 1.2, spawnRate: 1800, title: "💕 Sweet Romance" },
+      3: { heartsNeeded: 20, speed: 1.4, spawnRate: 1600, title: "💖 Deep Connection" },
+      4: { heartsNeeded: 25, speed: 1.6, spawnRate: 1400, title: "💝 True Love" },
+      5: { heartsNeeded: 30, speed: 1.8, spawnRate: 1200, title: "💘 Eternal Bond" },
+      6: { heartsNeeded: 35, speed: 2.0, spawnRate: 1000, title: "💗 Soul Mates" },
+      7: { heartsNeeded: 40, speed: 2.2, spawnRate: 900, title: "💓 Perfect Match" },
+      8: { heartsNeeded: 45, speed: 2.4, spawnRate: 800, title: "💞 Forever Together" },
+      9: { heartsNeeded: 50, speed: 2.6, spawnRate: 700, title: "💟 Infinite Love" },
+      10: { heartsNeeded: 60, speed: 3.0, spawnRate: 600, title: "💕 Legendary Love" }
     };
 
     // Initialize everything when page loads
@@ -2188,6 +2208,50 @@ author: "Roshan SHrestha"
       // Keyboard controls
       document.addEventListener('keydown', handleGameKeyPress);
       
+      // Mobile touch controls
+      const gameBoard = document.getElementById('gameBoard');
+      let touchStartX = 0;
+      let touchStartY = 0;
+      
+      gameBoard.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: false });
+      
+      gameBoard.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        if (!gameState.isPlaying) return;
+        
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+        
+        const minSwipeDistance = 30;
+        
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+          // Horizontal swipe
+          if (Math.abs(deltaX) > minSwipeDistance) {
+            if (deltaX > 0) {
+              movePanda('right');
+            } else {
+              movePanda('left');
+            }
+          }
+        } else {
+          // Vertical swipe
+          if (Math.abs(deltaY) > minSwipeDistance) {
+            if (deltaY > 0) {
+              movePanda('down');
+            } else {
+              movePanda('up');
+            }
+          }
+        }
+      }, { passive: false });
+      
       // Update displays
       document.getElementById('highScore').textContent = gameState.highScore;
       document.getElementById('gamesPlayed').textContent = gameState.gamesPlayed;
@@ -2201,6 +2265,14 @@ author: "Roshan SHrestha"
     function startGame() {
       gameState.isPlaying = true;
       gameState.score = 0;
+      gameState.heartsCollected = 0;
+      gameState.level = parseInt(gameState.currentLevel);
+      
+      // Load level configuration
+      const config = levelConfigs[gameState.level] || levelConfigs[1];
+      gameState.heartsNeeded = config.heartsNeeded;
+      gameState.gameSpeed = config.speed;
+      gameState.heartSpawnRate = config.spawnRate;
       
       // Hide instructions
       document.getElementById('gameInstructions').style.display = 'none';
@@ -2268,26 +2340,58 @@ author: "Roshan SHrestha"
       
       switch(e.code) {
         case 'ArrowUp':
+        case 'KeyW':
           e.preventDefault();
-          gameState.pandaY = Math.max(0, gameState.pandaY - moveDistance);
+          movePanda('up');
           break;
         case 'ArrowDown':
+        case 'KeyS':
           e.preventDefault();
-          gameState.pandaY = Math.min(maxY, gameState.pandaY + moveDistance);
+          movePanda('down');
           break;
         case 'ArrowLeft':
+        case 'KeyA':
           e.preventDefault();
-          gameState.pandaX = Math.max(0, gameState.pandaX - moveDistance);
+          movePanda('left');
           break;
         case 'ArrowRight':
+        case 'KeyD':
           e.preventDefault();
-          gameState.pandaX = Math.min(maxX, gameState.pandaX + moveDistance);
+          movePanda('right');
           break;
         case 'Space':
           e.preventDefault();
           if (!gameState.isPlaying) {
             startGame();
           }
+          break;
+      }
+      
+      // Check collision
+      checkCollision();
+    }
+
+    function movePanda(direction) {
+      if (!gameState.isPlaying) return;
+      
+      const gameBoard = document.getElementById('gameBoard');
+      const boardRect = gameBoard.getBoundingClientRect();
+      const maxX = boardRect.width - 60;
+      const maxY = boardRect.height - 60;
+      const moveDistance = 15;
+      
+      switch(direction) {
+        case 'up':
+          gameState.pandaY = Math.max(0, gameState.pandaY - moveDistance);
+          break;
+        case 'down':
+          gameState.pandaY = Math.min(maxY, gameState.pandaY + moveDistance);
+          break;
+        case 'left':
+          gameState.pandaX = Math.max(0, gameState.pandaX - moveDistance);
+          break;
+        case 'right':
+          gameState.pandaX = Math.min(maxX, gameState.pandaX + moveDistance);
           break;
       }
       
@@ -2313,6 +2417,7 @@ author: "Roshan SHrestha"
         
         // Collect heart
         gameState.score++;
+        gameState.heartsCollected++;
         gameState.totalHearts++;
         
         // Update UI
@@ -2321,14 +2426,92 @@ author: "Roshan SHrestha"
         // Create collection effect
         createCollectionEffect(heartRect.left, heartRect.top);
         
-        // Check win condition
-        if (gameState.score >= 10) {
-          winGame();
+        // Check level completion
+        if (gameState.heartsCollected >= gameState.heartsNeeded) {
+          completeLevel();
         } else {
           // Place new heart
           placeHeart();
         }
       }
+    }
+
+    function completeLevel() {
+      gameState.isPlaying = false;
+      
+      // Update high score and level
+      if (gameState.score > gameState.highScore) {
+        gameState.highScore = gameState.score;
+        localStorage.setItem('pandaGameHighScore', gameState.highScore);
+      }
+      
+      // Advance to next level
+      if (gameState.level < 10) {
+        gameState.level++;
+        gameState.currentLevel = gameState.level;
+        localStorage.setItem('pandaCurrentLevel', gameState.currentLevel);
+        
+        // Show level complete modal
+        showLevelCompleteModal();
+      } else {
+        // Game completed
+        showGameCompleteModal();
+      }
+    }
+
+    function showLevelCompleteModal() {
+      const config = levelConfigs[gameState.level];
+      const modal = document.createElement('div');
+      modal.className = 'game-over-modal';
+      modal.style.display = 'flex';
+      modal.innerHTML = `
+        <div class="game-over-content">
+          <h2>🎉 Level ${gameState.level - 1} Complete! 🎉</h2>
+          <p style="font-size: 1.2rem; color: #666; margin-bottom: 20px;">
+            ${config.title}
+          </p>
+          <div class="final-score" style="color: #ff6b9d; font-size: 1.5rem;">
+            Hearts Collected: ${gameState.heartsCollected}/${gameState.heartsNeeded}
+          </div>
+          <p style="font-size: 1.1rem; color: #555; margin: 20px 0;">
+            Ready for the next challenge? 💕
+          </p>
+          <button class="game-btn" onclick="this.parentElement.parentElement.remove(); startGame();" style="margin: 10px;">
+            🚀 Next Level
+          </button>
+          <button class="game-btn" onclick="this.parentElement.parentElement.remove(); resetGame();" style="background: #666; margin: 10px;">
+            🏠 Main Menu
+          </button>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    function showGameCompleteModal() {
+      const modal = document.createElement('div');
+      modal.className = 'game-over-modal';
+      modal.style.display = 'flex';
+      modal.innerHTML = `
+        <div class="game-over-content">
+          <h2>🏆 Game Complete! 🏆</h2>
+          <p style="font-size: 1.2rem; color: #666; margin-bottom: 20px;">
+            You've mastered all levels of love! 💕
+          </p>
+          <div class="final-score" style="color: #ff6b9d; font-size: 1.5rem;">
+            Total Hearts: ${gameState.totalHearts}
+          </div>
+          <p style="font-size: 1.1rem; color: #555; margin: 20px 0;">
+            You are a true love master! 🌹
+          </p>
+          <button class="game-btn" onclick="this.parentElement.parentElement.remove(); resetGame();" style="margin: 10px;">
+            🔄 Play Again
+          </button>
+          <button class="game-btn" onclick="this.parentElement.parentElement.remove();" style="background: #666; margin: 10px;">
+            ❌ Close
+          </button>
+        </div>
+      `;
+      document.body.appendChild(modal);
     }
 
     function createCollectionEffect(x, y) {
@@ -2350,8 +2533,15 @@ author: "Roshan SHrestha"
     }
 
     function updateGameUI() {
-      document.getElementById('score').textContent = `Hearts Collected: ${gameState.score}`;
+      const config = levelConfigs[gameState.level] || levelConfigs[1];
+      document.getElementById('score').textContent = `Level ${gameState.level}: ${gameState.heartsCollected}/${gameState.heartsNeeded} hearts`;
       document.getElementById('totalHearts').textContent = gameState.totalHearts;
+      
+      // Update level title if element exists
+      const levelTitle = document.getElementById('levelTitle');
+      if (levelTitle) {
+        levelTitle.textContent = config.title;
+      }
     }
 
     function winGame() {

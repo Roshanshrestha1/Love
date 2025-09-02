@@ -1169,6 +1169,35 @@
         margin: 20px 10px;
         border-radius: 15px;
       }
+
+      /* Mobile game improvements */
+      .game-board {
+        min-height: 350px;
+        touch-action: none;
+      }
+
+      .game-score {
+        font-size: 1rem;
+        gap: 5px;
+      }
+
+      #levelTitle {
+        font-size: 1.1rem;
+      }
+
+      #score {
+        font-size: 0.9rem;
+      }
+
+      .game-controls {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .game-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
       
       /* Better timer display on mobile */
       .timer {
@@ -1945,10 +1974,27 @@
 
     .game-score {
       display: flex;
-      gap: 20px;
+      flex-direction: column;
+      gap: 8px;
       align-items: center;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
+      text-align: center;
+    }
+
+    .game-score span {
+      display: block;
+    }
+
+    #levelTitle {
+      font-size: 1.3rem;
+      color: var(--rose-pink);
+      font-family: 'Great Vibes', cursive;
+    }
+
+    #score {
+      font-size: 1rem;
+      color: var(--gold);
     }
 
     .game-controls {
@@ -2412,7 +2458,8 @@
       <div class="love-game-container">
         <div class="game-header">
           <div class="game-score">
-            <span id="score">Hearts Collected: 0</span>
+            <span id="levelTitle">🌹 First Love</span>
+            <span id="score">Level 1: 0/10 hearts</span>
           </div>
           <div class="game-controls">
             <button class="game-btn" id="startGame">🎮 Start Game</button>
@@ -2422,10 +2469,11 @@
         <div class="game-board" id="gameBoard">
           <div class="game-instructions" id="gameInstructions">
             <h3>🐼 Help the Panda Find True Love! 💕</h3>
-            <p>• Use <strong>Arrow Keys</strong> (⬅️⬆️➡️⬇️) to move the panda</p>
-            <p>• Collect <strong>💖 hearts</strong> to find true love</p>
-            <p>• Collect <strong>10 hearts</strong> to win!</p>
-            <p>• Press <strong>SPACE</strong> to start the game</p>
+            <p>• Use <strong>Arrow Keys</strong> (⬅️⬆️➡️⬇️) or <strong>WASD</strong> to move</p>
+            <p>• On mobile: <strong>Swipe</strong> or use <strong>touch controls</strong></p>
+            <p>• Collect <strong>💖 hearts</strong> to complete each level</p>
+            <p>• <strong>10 levels</strong> of increasing difficulty!</p>
+            <p>• Press <strong>SPACE</strong> or click <strong>Start Game</strong> to begin</p>
           </div>
           <div class="panda" id="panda">🐼</div>
           <div class="heart" id="heart">💖</div>
