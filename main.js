@@ -221,9 +221,12 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
 
     // Initialize everything when page loads
     window.addEventListener('load', function() {
+      console.log('Page loaded, initializing...');
       // Show loading screen with clickable heart
       const loading = document.getElementById('loading');
       const loadingHeart = document.getElementById('loadingHeart');
+      console.log('Loading element:', loading);
+      console.log('Loading heart element:', loadingHeart);
       loading.style.display = 'flex';
       document.body.style.overflow = 'hidden';
       
@@ -338,6 +341,7 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
         loadingHeart.style.transform = 'scale(1)';
       });
       loadingHeart.addEventListener('click', function() {
+        console.log('Loading heart clicked via event listener!');
         loading.style.display = 'none';
         document.body.style.overflow = '';
         // Play music and initialize after heart click
