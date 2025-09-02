@@ -2437,6 +2437,6 @@ author: "Roshan SHrestha"
         50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
         100% { transform: translate(-50%, -50%) scale(1) translateY(-30px); opacity: 0; }
       }
-    `;
+        `;
     document.head.appendChild(style);
-  
+    
