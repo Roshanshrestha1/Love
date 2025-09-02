@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>🐼🦜🌹 Forever Loving You 🌹🦜🐼</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -106,6 +106,14 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
       font-weight: 600;
+      transform: translateY(0);
+    }
+
+    /* Hide language button when scrolling down */
+    .lang-toggle-btn.hidden {
+      transform: translateY(-100px);
+      opacity: 0;
+      transition: all 0.1s ease;
     }
     .lang-toggle-btn:hover {
       background: var(--rose-pink);
@@ -119,9 +127,9 @@
       z-index: 1000;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       background: rgba(255,255,255,0.15);
-      padding: 10px;
+      padding: 8px;
       border-radius: 15px;
       border: 1px solid rgba(255,255,255,0.2);
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -134,6 +142,8 @@
       .language-selector {
         top: 50px;
         right: 10px;
+        gap: 6px;
+        padding: 6px;
       }
     }
 
@@ -420,10 +430,13 @@
     }
 
     .letter-text {
-      font-size: 1.3rem;
-      line-height: 2;
+      font-size: 1.2rem;
+      line-height: 1.8;
       white-space: pre-line;
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: #2c3e50;
     }
 
     .close-modal {
@@ -575,33 +588,500 @@
       50% { transform: scale(1.05); }
     }
 
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    @keyframes flowerBloom {
+      0% { transform: scale(0) rotate(0deg); opacity: 0; }
+      50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+      100% { transform: scale(1) rotate(360deg); opacity: 1; }
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
+      .header {
+        padding: 80px 15px 60px;
+        margin: 10px;
+        border-radius: 20px;
+      }
+      
       .header h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      
+      .header-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+      }
+      
+      .timer-container {
+        padding: 25px 20px;
+        margin: 20px auto;
+        border-radius: 20px;
       }
       
       .timer {
-        font-size: 2rem;
+        font-size: 1.4rem;
+        line-height: 1.3;
+      }
+      
+      .timer-subtitle {
+        font-size: 1rem;
+        margin-top: 10px;
+      }
+      
+      .section {
+        margin: 30px 10px;
+        padding: 40px 20px;
+        border-radius: 20px;
       }
       
       .section h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-bottom: 30px;
       }
       
       .photo-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
       }
       
-      .music-controls {
+      .photo-item img {
+        height: 250px;
+      }
+      
+      .love-calculator {
+        padding: 25px 20px;
+        margin: 15px auto;
+        max-width: 350px;
+      }
+      
+      .love-calculator h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+      }
+      
+      .love-calculator input {
+        padding: 15px;
+        font-size: 1.1rem;
+        margin: 12px 0;
+      }
+      
+      .love-calculator button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        margin-top: 20px;
+      }
+      
+      .love-result {
+        font-size: 1.3rem;
+        margin-top: 15px;
+        line-height: 1.4;
+      }
+      
+      .music-controls.row-layout {
+        top: 10px;
+        left: 10px;
+        padding: 15px 12px 12px 12px;
+        min-width: 150px;
+      }
+      
+      .music-title-row {
+        font-size: 1rem;
+        margin-bottom: 6px;
+      }
+      
+      .music-toggle.small-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+      }
+      
+      .music-controls input[type="range"] {
+        width: 80px;
+      }
+
+      .draggable-music {
         top: 10px;
         left: 10px;
       }
+
+      .drag-handle {
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+      }
       
       .language-selector {
-        top: 10px;
+        top: 50px;
         right: 10px;
         flex-direction: column;
+        padding: 8px;
+        gap: 8px;
+      }
+      
+      .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+      
+      .lang-toggle-btn {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+      
+      .theme-toggle {
+        top: 10px;
+        right: 110px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+
+      .theme-toggle.language-open {
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+      }
+
+      .theme-toggle.language-closed {
+        top: 10px;
+        right: 110px;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      
+      .envelope {
+        width: 150px;
+        height: 100px;
+      }
+      
+      .envelope::after {
+        font-size: 2rem;
+      }
+      
+      .letter-content {
+        padding: 50px 25px 25px 25px;
+        max-width: 95%;
+        max-height: 95%;
+        border-radius: 20px;
+      }
+      
+      .letter-header h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+      
+      .letter-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: calc(95vh - 150px);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        color: #2c3e50;
+      }
+      
+      .letter-close-btn {
+        top: 15px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 2.2rem;
+      }
+      
+      .slideshow-container {
+        margin: 20px auto;
+        border-radius: 15px;
+      }
+      
+      .slideshow-slide {
+        height: 300px;
+      }
+      
+      .slideshow-nav {
+        bottom: 15px;
+        gap: 8px;
+      }
+      
+      .slideshow-dot {
+        width: 10px;
+        height: 10px;
+      }
+      
+      .upload-section {
+        padding: 30px 20px;
+        margin-top: 30px;
+      }
+      
+      .upload-btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+      }
+      
+      .footer {
+        padding: 40px 15px;
+        margin: 60px 10px 10px;
+        border-radius: 15px;
+      }
+      
+      .footer p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+      
+      .love-quotes {
+        padding: 20px;
+        margin: 15px auto;
+      }
+      
+      .quote-text {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+      
+      .quote-author {
+        font-size: 0.9rem;
+      }
+    }
+    
+    /* Extra small devices (phones in portrait) */
+    @media (max-width: 480px) {
+      .header {
+        padding: 60px 10px 40px;
+        margin: 5px;
+      }
+      
+      .header h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+      
+      .header-subtitle {
+        font-size: 1rem;
+      }
+      
+      .timer-container {
+        padding: 20px 15px;
+        margin: 15px auto;
+      }
+      
+      .timer {
+        font-size: 1.2rem;
+      }
+      
+      .section {
+        margin: 20px 5px;
+        padding: 30px 15px;
+      }
+      
+      .section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+      }
+      
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .photo-item img {
+        height: 220px;
+      }
+      
+      .love-calculator {
+        padding: 20px 15px;
+        margin: 10px auto;
+        max-width: 320px;
+      }
+      
+      .love-calculator h3 {
+        font-size: 1.4rem;
+      }
+      
+      .love-calculator input {
+        padding: 12px;
+        font-size: 1rem;
+      }
+      
+      .love-calculator button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+      }
+      
+      .love-result {
+        font-size: 1.2rem;
+      }
+      
+      .music-controls.row-layout {
+        top: 5px;
+        left: 5px;
+        padding: 12px 10px 10px 10px;
+        min-width: 140px;
+      }
+      
+      .music-title-row {
+        font-size: 0.9rem;
+      }
+      
+      .music-toggle.small-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+      }
+      
+      .music-controls input[type="range"] {
+        width: 70px;
+      }
+      
+      .language-selector {
+        top: 45px;
+        right: 5px;
+        padding: 6px;
+        gap: 6px;
+      }
+      
+      .lang-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+      }
+      
+      .lang-toggle-btn {
+        top: 5px;
+        right: 5px;
+        padding: 5px 10px;
+        font-size: 0.8rem;
+      }
+      
+      .theme-toggle {
+        top: 5px;
+        right: 95px;
+        padding: 5px 10px;
+        font-size: 0.8rem;
+      }
+
+      .theme-toggle.language-open {
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+      }
+
+      .theme-toggle.language-closed {
+        top: 5px;
+        right: 95px;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      
+      .envelope {
+        width: 120px;
+        height: 80px;
+      }
+      
+      .envelope::after {
+        font-size: 1.8rem;
+      }
+      
+      .letter-content {
+        padding: 60px 20px 20px 20px;
+        max-width: 100%;
+        max-height: 100%;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        position: fixed;
+      }
+      
+      .letter-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+      
+      .letter-text {
+        font-size: 1rem;
+        line-height: 1.7;
+        padding-right: 10px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        max-height: calc(100vh - 120px);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        color: #2c3e50;
+      }
+
+      .letter-close-btn {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
+        background: rgba(231, 76, 60, 0.95);
+      }
+      
+      .slideshow-slide {
+        height: 250px;
+      }
+
+      /* Nickname modal mobile - keep small */
+      .nickname-modal-content {
+        max-width: 90% !important;
+        max-height: 80% !important;
+        width: 90% !important;
+        height: auto !important;
+        padding: 25px !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+      }
+      
+      .upload-section {
+        padding: 25px 15px;
+      }
+      
+      .upload-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+      
+      .footer {
+        padding: 30px 10px;
+        margin: 40px 5px 5px;
+      }
+      
+      .footer p {
+        font-size: 1rem;
+      }
+      
+      .love-quotes {
+        padding: 15px;
+      }
+      
+      .quote-text {
+        font-size: 1rem;
+      }
+      
+      .quote-author {
+        font-size: 0.8rem;
       }
     }
 
@@ -634,6 +1114,81 @@
       background: var(--gold);
     }
 
+    /* Mobile Touch Improvements */
+    @media (max-width: 768px) {
+      .custom-cursor {
+        display: none;
+      }
+      
+      /* Improve touch targets */
+      button, .lang-btn, .theme-toggle, .music-toggle, .envelope, .photo-item, .slideshow-dot {
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
+      }
+      
+      /* Better touch feedback */
+      button:active, .lang-btn:active, .theme-toggle:active, .music-toggle:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+      }
+      
+      /* Prevent zoom on input focus */
+      input, textarea, select {
+        font-size: 16px;
+        transform: translateZ(0);
+      }
+      
+      /* Smooth scrolling */
+      html {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+      }
+      
+      /* Better modal handling on mobile */
+      .letter-modal, .letter-modal .letter-content {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      }
+      
+      /* Improve floating elements for mobile */
+      .floating-item {
+        font-size: 1.5rem;
+        animation-duration: 6s;
+      }
+      
+      /* Better photo grid for mobile */
+      .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 15px;
+        padding: 0 10px;
+      }
+      
+      /* Improve love calculator for mobile */
+      .love-calculator {
+        margin: 20px 10px;
+        border-radius: 15px;
+      }
+      
+      /* Better timer display on mobile */
+      .timer {
+        word-break: break-word;
+        hyphens: auto;
+      }
+      
+      /* Improve slideshow for mobile */
+      .slideshow-container {
+        margin: 15px 10px;
+        border-radius: 12px;
+      }
+      
+      /* Better upload section */
+      .upload-section {
+        margin: 20px 10px;
+        border-radius: 15px;
+      }
+    }
+
     /* Dark Mode Styles */
     body.dark-mode {
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -649,7 +1204,7 @@
     .theme-toggle {
       position: fixed;
       top: 20px;
-      right: 200px;
+      right: 130px;
       z-index: 1000;
       background: rgba(255, 255, 255, 0.2);
       border: 2px solid rgba(255, 255, 255, 0.3);
@@ -657,9 +1212,37 @@
       padding: 8px 15px;
       border-radius: 20px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.1s ease;
       backdrop-filter: blur(10px);
       font-weight: 600;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Theme Toggle when language selector is open - HIDE */
+    .theme-toggle.language-open {
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+      transition: all 0.1s ease;
+    }
+
+    /* Theme Toggle when scrolling down - HIDE */
+    .theme-toggle.hidden {
+      transform: translateY(-100px) !important;
+      opacity: 0 !important;
+      transition: all 0.1s ease;
+      pointer-events: none !important;
+    }
+
+    /* Theme Toggle when language selector is closed - SHOW */
+    .theme-toggle.language-closed {
+      top: 20px;
+      right: 130px;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      transition: all 0.1s ease;
     }
 
     .theme-toggle:hover {
@@ -851,11 +1434,740 @@
       0% { transform: translateY(0) rotate(0deg); opacity: 1; }
       100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
     }
+
+    /* Letter Opening Animation Effects */
+    @keyframes flowerBloom {
+      0% { 
+        transform: scale(0) rotate(0deg); 
+        opacity: 0; 
+      }
+      50% { 
+        transform: scale(1.3) rotate(180deg); 
+        opacity: 0.8; 
+      }
+      100% { 
+        transform: scale(1) rotate(360deg); 
+        opacity: 1; 
+      }
+    }
+
+    @keyframes sparkleEffect {
+      0%, 100% { 
+        transform: scale(1) rotate(0deg); 
+        opacity: 1; 
+      }
+      25% { 
+        transform: scale(1.2) rotate(90deg); 
+        opacity: 0.8; 
+      }
+      50% { 
+        transform: scale(0.8) rotate(180deg); 
+        opacity: 1; 
+      }
+      75% { 
+        transform: scale(1.1) rotate(270deg); 
+        opacity: 0.9; 
+      }
+    }
+
+    @keyframes floatingPetal {
+      0% { 
+        transform: translateY(0px) rotate(0deg); 
+        opacity: 1; 
+      }
+      25% { 
+        transform: translateY(-20px) rotate(90deg); 
+        opacity: 0.8; 
+      }
+      50% { 
+        transform: translateY(-10px) rotate(180deg); 
+        opacity: 1; 
+      }
+      75% { 
+        transform: translateY(-30px) rotate(270deg); 
+        opacity: 0.7; 
+      }
+      100% { 
+        transform: translateY(0px) rotate(360deg); 
+        opacity: 1; 
+      }
+    }
+
+    @keyframes celebrationBurst {
+      0% { 
+        transform: scale(0) rotate(0deg); 
+        opacity: 1; 
+      }
+      50% { 
+        transform: scale(1.5) rotate(180deg); 
+        opacity: 0.8; 
+      }
+      100% { 
+        transform: scale(1) rotate(360deg); 
+        opacity: 0; 
+      }
+    }
+
+    @keyframes loveMessageFloat {
+      0% { 
+        transform: translate(-50%, -50%) scale(0.5); 
+        opacity: 0; 
+      }
+      20% { 
+        transform: translate(-50%, -50%) scale(1.2); 
+        opacity: 1; 
+      }
+      80% { 
+        transform: translate(-50%, -50%) scale(1); 
+        opacity: 1; 
+      }
+      100% { 
+        transform: translate(-50%, -70%) scale(0.8); 
+        opacity: 0; 
+      }
+    }
+
+    /* Enhanced envelope hover effect for letter */
+    .envelope:hover {
+      transform: scale(1.2);
+      box-shadow: 0 25px 60px rgba(255, 107, 157, 0.8);
+      animation: envelopeGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes envelopeGlow {
+      0% { 
+        box-shadow: 0 25px 60px rgba(255, 107, 157, 0.8);
+        filter: brightness(1);
+      }
+      100% { 
+        box-shadow: 0 30px 80px rgba(255, 107, 157, 1);
+        filter: brightness(1.2);
+      }
+    }
+
+    /* Letter modal enhanced styling */
+    .letter-modal {
+      transition: all 0.3s ease;
+    }
+
+    .letter-modal.showing {
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(20px);
+    }
+
+    .letter-content {
+      animation: letterSlideIn 0.8s ease-out;
+    }
+
+    @keyframes letterSlideIn {
+      0% { 
+        opacity: 0; 
+        transform: translate(-50%, -60%) scale(0.8); 
+      }
+      50% { 
+        opacity: 0.8; 
+        transform: translate(-50%, -45%) scale(1.05); 
+      }
+      100% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1); 
+      }
+    }
+
+    /* Enhanced Close Button for Letter Modal */
+    .letter-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(231, 76, 60, 0.9);
+      border: none;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      z-index: 1002;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .letter-close-btn:hover {
+      background: rgba(231, 76, 60, 1);
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    }
+
+    .letter-close-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Mobile fullscreen letter modal */
+    .letter-content.mobile-fullscreen {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      max-width: 100vw !important;
+      max-height: 100vh !important;
+      transform: none !important;
+      border-radius: 0 !important;
+      padding: 60px 20px 20px 20px !important;
+    }
+
+    /* Breathing animation for letter */
+    @keyframes letterBreathing {
+      0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      50% { 
+        transform: translate(-50%, -50%) scale(1.02);
+        box-shadow: 0 20px 50px rgba(255, 107, 157, 0.3);
+      }
+    }
+
+    /* Smaller music player when letter is open */
+    .music-controls.letter-mode {
+      transform: scale(0.7);
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+
+    .music-controls.letter-mode .music-title-row {
+      font-size: 0.8rem;
+    }
+
+    .music-controls.letter-mode .music-toggle.small-btn {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+    }
+
+    .music-controls.letter-mode input[type="range"] {
+      width: 60px;
+    }
+
+    /* Draggable Music Player */
+    .draggable-music {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      cursor: move;
+      user-select: none;
+      transition: transform 0.2s ease;
+    }
+
+    .draggable-music:hover {
+      transform: scale(1.02);
+    }
+
+    .draggable-music.dragging {
+      cursor: grabbing;
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+    }
+
+    .drag-handle {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.2s ease;
+    }
+
+    .drag-handle:hover {
+      background: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 1);
+    }
+
+    .drag-handle:active {
+      cursor: grabbing;
+    }
+
+    /* Nickname modal - smaller size like original */
+    .nickname-modal-content {
+      max-width: 500px !important;
+      max-height: 400px !important;
+      width: 90% !important;
+      height: auto !important;
+      padding: 30px !important;
+    }
+
+    /* Breathing animation for nickname modal */
+    @keyframes nicknameBreathing {
+      0%, 100% { 
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      50% { 
+        transform: translate(-50%, -50%) scale(1.05);
+        box-shadow: 0 25px 60px rgba(255, 107, 157, 0.4);
+      }
+    }
+
+    @keyframes envelopeSparkle {
+      0% { 
+        transform: translate(-50%, -50%) scale(0) rotate(0deg); 
+        opacity: 1; 
+      }
+      50% { 
+        transform: translate(-50%, -50%) scale(1.5) rotate(180deg); 
+        opacity: 0.8; 
+      }
+      100% { 
+        transform: translate(-50%, -50%) scale(0.5) rotate(360deg); 
+        opacity: 0; 
+      }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+      20%, 40%, 60%, 80% { transform: translateX(5px); }
+    }
+
+    /* Enhanced Photo Modal Styles */
+    .photo-modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.95);
+      border-radius: 20px;
+      max-width: 95vw;
+      max-height: 95vh;
+      width: 90vw;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 107, 157, 0.3);
+    }
+
+    .image-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+      cursor: grab;
+      transition: cursor 0.2s ease;
+    }
+
+    .image-container:active {
+      cursor: grabbing;
+    }
+
+    .image-container.draggable {
+      cursor: grab;
+    }
+
+    .image-container.draggable:hover {
+      cursor: grab;
+    }
+
+    .image-container.draggable:active {
+      cursor: grabbing;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .zoom-controls {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1001;
+    }
+
+    .zoom-btn {
+      background: rgba(255, 107, 157, 0.9);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .zoom-btn:hover {
+      background: rgba(255, 107, 157, 1);
+      transform: scale(1.1);
+    }
+
+    .nav-controls {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1001;
+    }
+
+    .nav-btn {
+      background: rgba(255, 107, 157, 0.9);
+      border: none;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 107, 157, 1);
+      transform: scale(1.1);
+    }
+
+    .image-info {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      z-index: 1001;
+    }
+
+    .image-info span {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .image-info #imageCounter {
+      color: #ff6b9d;
+    }
+
+    .image-info #imageTitle {
+      color: #f39c12;
+    }
+
+    /* Enhanced Close Button for Photo Modal */
+    .photo-close-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(231, 76, 60, 0.9);
+      border: none;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      z-index: 1002;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .photo-close-btn:hover {
+      background: rgba(231, 76, 60, 1);
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    }
+
+    .photo-close-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Love Panda Game Styles */
+    .love-game-container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .game-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .game-score {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .game-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .game-btn {
+      background: linear-gradient(45deg, var(--rose-pink), var(--secondary-color));
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+    }
+
+    .game-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+    }
+
+    .game-board {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      border-radius: 15px;
+      padding: 20px;
+      min-height: 400px;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .game-instructions {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .game-instructions h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--rose-pink);
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .game-instructions p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .game-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px 20px;
+      border-radius: 15px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 5px;
+    }
+
+    .stat-value {
+      display: block;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    /* Game Elements */
+    .panda {
+      position: absolute;
+      font-size: 3rem;
+      transition: all 0.1s ease;
+      z-index: 10;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+      cursor: pointer;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 2.5rem;
+      animation: heartFloat 2s ease-in-out infinite;
+      z-index: 5;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    @keyframes heartFloat {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-10px) scale(1.1); }
+    }
+
+    @keyframes brokenHeartFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(10deg); }
+    }
+
+    @keyframes soulmateGlow {
+      0%, 100% { transform: scale(1); filter: brightness(1); }
+      50% { transform: scale(1.2); filter: brightness(1.3); }
+    }
+
+    /* Game Over Modal */
+    .game-over-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      backdrop-filter: blur(10px);
+    }
+
+    .game-over-content {
+      background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+      color: #333;
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+      border: 3px solid var(--rose-pink);
+    }
+
+    .game-over-content h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: var(--rose-red);
+      margin-bottom: 20px;
+    }
+
+    .game-over-content p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #555;
+    }
+
+    .final-score {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 20px 0;
+    }
+
+    /* Mobile optimizations for photo modal */
+    @media (max-width: 768px) {
+      .photo-modal-content {
+        width: 98vw;
+        height: 98vh;
+        max-width: 98vw;
+        max-height: 98vh;
+      }
+
+      .zoom-controls {
+        top: 10px;
+        right: 10px;
+        gap: 5px;
+      }
+
+      .zoom-btn {
+        padding: 8px 12px;
+        font-size: 1rem;
+      }
+
+      .nav-controls {
+        padding: 0 10px;
+      }
+
+      .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        padding: 10px 15px;
+      }
+
+      .image-info {
+        bottom: 10px;
+        padding: 8px 15px;
+        gap: 15px;
+      }
+
+      .image-info span {
+        font-size: 0.9rem;
+      }
+
+      .photo-close-btn {
+        top: 10px;
+        left: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Loading Screen -->
-  <div class="loading" id="loading" style="display:flex; align-items:center; justify-content:center;">
+  <div class="loading" id="loading" style="align-items:center; justify-content:center;">
     <div class="loading-content" style="text-align:center;">
       <div id="loadingHeart" class="loading-heart" style="font-size:6rem; cursor:pointer; user-select:none; transition:transform 0.2s;">💖</div>
       <div class="loading-text" style="margin-top:20px; font-size:1.5rem;">Click the heart to open and play music</div>
@@ -893,8 +2205,11 @@
     <i class="fas fa-moon"></i> Theme
   </button>
 
-  <!-- Music Controls -->
-  <div class="music-controls row-layout">
+  <!-- Draggable Music Controls -->
+  <div class="music-controls row-layout draggable-music" id="musicControls">
+    <div class="drag-handle" title="Drag to move music player">
+      <i class="fas fa-grip-vertical"></i>
+    </div>
     <span id="currentTrackTitle" class="music-title-row"></span>
     <div class="music-btn-row">
       <button class="music-toggle small-btn" id="prevTrackBtn" onclick="playPrevTrack()">
@@ -913,7 +2228,7 @@
 
   <!-- Audio Elements -->
   <audio id="bgMusic" loop autoplay>
-    <source src="music/7%20years.mp3" type="audio/mpeg">
+    <source src="music/7_years.mp3" type="audio/mpeg">
   </audio>
 
   <!-- Main Content -->
@@ -925,7 +2240,17 @@
       <div class="timer-container">
         <div class="timer" id="timer">⏳ Loading...</div>
         <div class="timer-subtitle" id="timerSubtitle">🕰️ Time since my heart started waiting for you</div>
-        <div style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">💾 Timer persists across visits - Always accurate Nepal time</div>
+        <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #ff6b9d; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-top: 15px; line-height: 1.6; letter-spacing: 0.5px;">💔 I realize my mistake but when I realize I look back and you are not there</div>
+        <div style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; font-weight: 700; color: #e74c3c; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">💖 I love you until the end of my life</div>
+        <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #f39c12; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px;">⏳ I will wait forever - until my last breath</div>
+        <div style="font-family: 'Dancing Script', cursive; font-size: 1.2rem; font-weight: 700; color: #27ae60; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); margin-top: 8px; line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">🌹 My heart beats only for you, my love</div>
+        
+        <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 15px; border: 1px solid rgba(255,255,255,0.2);">
+          <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #e74c3c; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">💔 I lost you by my mistakes, and now silence is my only punishment. 🕯️</div>
+          <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #8e44ad; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">🥀 Too late I realized your worth — now my soul lives in regret. 😞</div>
+          <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #3498db; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); margin-bottom: 10px; line-height: 1.6; letter-spacing: 0.5px;">🌧️ If I could turn back time, I'd hold you and never let go. ⏳🤲</div>
+          <div style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; font-weight: 600; color: #f39c12; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); line-height: 1.6; letter-spacing: 0.5px; animation: glow 3s ease-in-out infinite alternate;">🙏 Even if you never return, your love will remain my eternal lesson. 💭❤️</div>
+        </div>
       </div>
     </div>
 
@@ -958,10 +2283,10 @@
       </div>
     </div>
 
-    <!-- Letter Modal -->
+    <!-- Enhanced Letter Modal -->
     <div class="letter-modal" id="letterModal">
       <div class="letter-content">
-        <button class="close-modal" onclick="closeLetter()">×</button>
+        <button class="close-modal letter-close-btn" onclick="closeLetter()">×</button>
         <div class="letter-header">
           <h2 id="letterHeader">💖 Letter From My Heart 💖</h2>
         </div>
@@ -971,7 +2296,7 @@
 
     <!-- Nickname Question Modal -->
     <div class="letter-modal" id="nicknameModal" style="display:none;">
-      <div class="letter-content">
+      <div class="letter-content nickname-modal-content">
         <button class="close-modal" onclick="closeNicknameModal()">×</button>
         <div class="letter-header">
           <h2>🔑 Secret Question</h2>
@@ -994,7 +2319,9 @@
         <img class="slideshow-slide" src="images/00002.jpg" alt="Memory 3">
         <img class="slideshow-slide" src="images/00098.jpg" alt="Memory 4">
         <img class="slideshow-slide" src="images/001.jpg" alt="Memory 5">
-        <img class="slideshow-slide" src="images/003.jpg" alt="Memory 6">
+        <img class="slideshow-slide" src="images/002.jpg" alt="Memory 6">
+        <img class="slideshow-slide" src="images/003.jpg" alt="Memory 7">
+        <img class="slideshow-slide" src="images/0089.jpg" alt="Memory 8">
         <div class="slideshow-nav">
           <div class="slideshow-dot active" onclick="currentSlide(1)"></div>
           <div class="slideshow-dot" onclick="currentSlide(2)"></div>
@@ -1002,6 +2329,8 @@
           <div class="slideshow-dot" onclick="currentSlide(4)"></div>
           <div class="slideshow-dot" onclick="currentSlide(5)"></div>
           <div class="slideshow-dot" onclick="currentSlide(6)"></div>
+          <div class="slideshow-dot" onclick="currentSlide(7)"></div>
+          <div class="slideshow-dot" onclick="currentSlide(8)"></div>
         </div>
       </div>
 
@@ -1043,10 +2372,24 @@
             </div>
           </div>
           <div class="photo-item">
-            <img src="images/003.jpg" alt="Memory 6" onclick="openPhotoModal(this.src)">
+            <img src="images/002.jpg" alt="Memory 6" onclick="openPhotoModal(this.src)">
+            <div class="photo-overlay">
+              <h3>Sweet Moments</h3>
+              <p>Cherished memories</p>
+            </div>
+          </div>
+          <div class="photo-item">
+            <img src="images/003.jpg" alt="Memory 7" onclick="openPhotoModal(this.src)">
             <div class="photo-overlay">
               <h3>My Everything</h3>
               <p>You are my world</p>
+            </div>
+          </div>
+          <div class="photo-item">
+            <img src="images/0089.jpg" alt="Memory 8" onclick="openPhotoModal(this.src)">
+            <div class="photo-overlay">
+              <h3>Special Memory</h3>
+              <p>Our beautiful moments</p>
             </div>
           </div>
         </div>
@@ -1063,17 +2406,94 @@
       </div>
     </div>
 
+    <!-- Love Panda Game Section -->
+    <div class="section">
+      <h2 id="gameTitle">🐼💕 Panda's Journey to True Love 💕🐼</h2>
+      <div class="love-game-container">
+        <div class="game-header">
+          <div class="game-score">
+            <span id="score">Hearts Collected: 0</span>
+          </div>
+          <div class="game-controls">
+            <button class="game-btn" id="startGame">🎮 Start Game</button>
+            <button class="game-btn" id="resetGame">🔄 Reset</button>
+          </div>
+        </div>
+        <div class="game-board" id="gameBoard">
+          <div class="game-instructions" id="gameInstructions">
+            <h3>🐼 Help the Panda Find True Love! 💕</h3>
+            <p>• Use <strong>Arrow Keys</strong> (⬅️⬆️➡️⬇️) to move the panda</p>
+            <p>• Collect <strong>💖 hearts</strong> to find true love</p>
+            <p>• Collect <strong>10 hearts</strong> to win!</p>
+            <p>• Press <strong>SPACE</strong> to start the game</p>
+          </div>
+          <div class="panda" id="panda">🐼</div>
+          <div class="heart" id="heart">💖</div>
+        </div>
+        <div class="game-stats">
+          <div class="stat-item">
+            <span class="stat-label">High Score:</span>
+            <span class="stat-value" id="highScore">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Games Played:</span>
+            <span class="stat-value" id="gamesPlayed">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Total Hearts:</span>
+            <span class="stat-value" id="totalHearts">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Footer -->
     <div class="footer">
       <p id="footerText">✨ Made with infinite ❤️ — I'll wait one day longer than forever. ✨</p>
     </div>
   </div>
 
-  <!-- Photo Modal -->
+  <!-- Game Over Modal -->
+  <div class="game-over-modal" id="gameOverModal">
+    <div class="game-over-content">
+      <h2 id="gameOverTitle">🐼 Game Over! 💔</h2>
+      <p id="gameOverMessage">The panda couldn't find love this time...</p>
+      <div class="final-score" id="finalScore">Final Score: 0</div>
+      <p id="gameOverEncouragement">Don't give up! Try again to help the panda find true love! 💕</p>
+      <button class="game-btn" onclick="restartGame()">🔄 Play Again</button>
+      <button class="game-btn" onclick="closeGameOver()" style="background: #666;">❌ Close</button>
+    </div>
+  </div>
+
+  <!-- Enhanced Photo Modal -->
   <div class="letter-modal" id="photoModal">
-    <div class="letter-content" style="max-width: 85%; padding: 25px;">
-      <button class="close-modal" onclick="closePhotoModal()">×</button>
-      <img id="modalImage" src="images/000.jpg" alt="Memory" style="width: 100%; height: auto; border-radius: 15px;">
+    <div class="photo-modal-content">
+      <button class="close-modal photo-close-btn" onclick="closePhotoModal()">×</button>
+      
+      <!-- Zoom Controls -->
+      <div class="zoom-controls">
+        <button class="zoom-btn" onclick="zoomIn()" title="Zoom In">🔍+</button>
+        <button class="zoom-btn" onclick="zoomOut()" title="Zoom Out">🔍-</button>
+        <button class="zoom-btn" onclick="resetZoom()" title="Reset Zoom">🔄</button>
+        <button class="zoom-btn" onclick="fitToScreen()" title="Fit to Screen">📐</button>
+      </div>
+      
+      <!-- Navigation Controls -->
+      <div class="nav-controls">
+        <button class="nav-btn" onclick="previousImage()" title="Previous Image">◀</button>
+        <button class="nav-btn" onclick="nextImage()" title="Next Image">▶</button>
+      </div>
+      
+      <!-- Image Container -->
+      <div class="image-container" id="imageContainer">
+        <img id="modalImage" src="images/000.jpg" alt="Memory">
+      </div>
+      
+      <!-- Image Info -->
+      <div class="image-info">
+        <span id="imageCounter">1 / 8</span>
+        <span id="imageTitle">Beautiful Memory</span>
+      </div>
     </div>
   </div>
 

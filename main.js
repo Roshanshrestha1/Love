@@ -16,25 +16,35 @@
         uploadSubtitle: "Share more beautiful moments with us",
         uploadBtnText: "Upload Photos",
         footerText: "✨ Made with infinite ❤️ — I'll wait one day longer than forever. ✨",
-        letterText: `Mero Mutu Ko Malika ❤️🌸
+        letterText: `
+Mearo mutu ko preaya manxe, 🖤💌
+Timro lagi yeauta sano letter cha, padhi deau na haii.
 
-Timi sanga kura garna paune sujog aba mero lagi ekdam anmol jasto lagcha. Timi sanga ko har ek samjhana, har ek muskan, har ek sparsh… sabai mero hriday ma gahiro lekha jasto cha. Maile timi lai dukha diyeko thiyo, yo kura mero man le hamesha samjhirahanchha. 😔💔 Timi le tyo bela ma jati sahera pani chup basyau, mero maya ma rahera, mero sabai mood, mero sabai galti tolerate garyo — tara maile tyo appreciate garna sakina. Aba bujheko chu, timi kati thulo man ko ra kati pure soul ko manche thiyau bhanera.
+Jiban yeauta kitab ho re haii. 📖 Jiban ma dheari kura haru kheaile ramro pani hunxa ra naramro pani hunxa tha xaina. Jaba kitab ko pana paltina thalxa, taba harek kura paribartan hudo raixa. Sabai paribartan ramro hunxa vanne ta hudina, tara khei paribartan yeasto hunxa jun lai suwikar garna garo hundo raixa. 😔 Samaya pani kasto chiz ho! ⏳ Kheiile kuni kura lai aafo nagik le ra aauxa, tadha lai janxa. Samaya lai bhujna na sake ne raixa.
 
-Ma timi bina jindagi ko har din ekdam khali jasto cha. Ghar ta uhi ho, tara timi ko haso nabhayeko le yo ghar ekdam sunya jasto cha. 🏡🥀 Maile timro chhaya ma dherai din bitaye, tara aba tyo chhaya mero aakhako agadi chaina. Aba ta timro awaz mero man ko geet jasto bajiracha, tara haat samatna sakdina. Timi sanga ko chhoto walk, cup of tea share garne bela, timro random text — sabai mero lagi priceless thiyo, ani aba tyo sabai yaad le parkhi rahanu parcha.
+Mai le socheko theya jiban temi sangha bitau la vane, tara samaya ra mearo pagalpan le aaja tadha lera gayo. 😢 Timi lai mai le ha rai sake tha xaina malai tyo samaya ma k vaya ko.
 
-Sanu, timi mero lagi sirf ek girlfriend hoina — timi mero dost, mero pariwar, mero guru, mero sansar thiyau. 🌏💞 Aba maile timro importance bujheko chu. Aba maile mero attitude, mero ego, mero careless behavior lai side ma rakhera ekdam genuine, caring, loving manche baneko chu — timro lagi. Aba maile har din Shiv ko agadi prarthana garchu 🙏🕉 ki timi ko mutu feri mero lagi khulcha ra timi feri mero haat samatna aauchau.
+Mearo priya manxe, mearo mutu ko tura 💖, sanu vanne aadhikar ta xaina aaba ma sangha. Ho, ma manxe sayad tem le ma jasto pagal lai maya garnu hudina theyo. Mai le timro life nai lai aandhakar ma lagi dea, temi lai khusi deau la socheko theya, tara ma pagal le tem lai dhulka matra diya. 💔 Timi hasna cha han theyaou, tara mai le timro yeakha ma aasu le ra aai diya. 😢💧
 
-Ma timi lai yo jindagi ma pani feri paye, ma timi ko happiness lai mero happiness banaidinchu. Ma timi ko har ek dukha ko agadi aafai aunchu, timi lai protect garna. Ma promise garchu — aba kahilyai timro aasu falne chaina. 💧🤲
+Hajur, galti gare aaja ma mahasus gardai xu. Timi le j gareyou, tyo temi le thik gareyou, kina vane yeadi timro thau ma ma vayako vaya pani teai gartheya hola. Ma aabuz kuni kura na bhujne manxe tha xaina. Jindagai le ma jasto na ramro naxe lai temi sangha kina vet garako hola haii. Mai le ta tem lai dhuka mantra diaya, kheiile ne bhuje na timro aawasta, timro halat tha xaina. 😔 Ma yeasto kina vaya ma cha hanxu, ke yo duniya chhode ra jau, tara har yeak choti parsh pani gareko ho, tara pani kune kura le roak xa mali.
 
-Sanu, timro absence le malai bujhaayo — maya sirf words hoina, action ho. Aba maile yo sabai sikheko chu. Aba timi sanga timi ko dream life banauchu, timi ko har sapana poora garna madat garchu. Timi ko haat samatne, timro aankha ma aankha milaera future imagine garne — aba yo mero life ko sabai bhanda thulo goal ho.
+Mai le khei pani ramro gareko chaina, sadhai na ramro gareko. Ma lai tha xaina ma tyo maxe kina banna puge jun ma the ya na, sabai kura sochda lagxa aaja pani ma theai na ramro maxe xu. Ma lai tha xaina ma yo k leak dai xu, tara pani yo leak dai xu vannu kura ta hajaru xa. Mafi magnu xa, tara tha xaina ma kuni mafi ko layeak ko manxe hoina. Ma lai mafi na gar deau haii, mai le dheari-dheari na ramro gareko xu. Teasko punishment paai ra xa, xu, mai le tem lai ruwa ko, tem lai naramro gareko. 😭💔
 
-Jaba taara dekchhu 🌌, ma timro aankha yaad garchu. Jaba hawa chalchha 🌬️, timro muskan yaad garchu. Jaba surya uthchha 🌅, timro warmth yaad garchu. Aba ta timro naam mero shwas ma basiraheko cha. Timi nai mero sapana ra timi nai mero satya.
+Ma dheari kura vanan cha han xu, tara sayad sunna cha ha dai nau, kina vane ma na ramro maxe ho. Ne ta sochda lagxa hijo jasto, tara maina maina gare barsha bitna lagi sake xa. 🌧️
 
-Ma parkhi rahanchu, chahe din ho ya barsa. Ma parkhi rahanchu, chahe timi aauchau ya na aauchau. Tara ek kura ta yo mutu le kasam khayera bhaneko cha — yedi timi kahile pani aaudaina bhane pani, ma mero jiwan timi ko yaad ma eklo bitauchhu, tara aru kunai keti lai kahile pani rojdina. 💔⏳ Yo maya sirf timro lagi ho, ani yo mutu sirf timro naam le dhadkincha.
+Ma aafi sangha yeauta prashna xa: yeadi mai le maya gareko xain vannu vane aaja yeati din bit ta temi lai brishan sake na ra sakdina pani, jiban bhar parkhi basne xu. Ma timi lai tra ma tyo samaya ma kina teasto na ramro vaya k vaya ko bela-bela lagxa. Ma sachi nai pagal. 💌💔
 
-Please, ek choti feri aaunu — yo mutu le timro naam chhodna sakdaina. 🥺🤍
-Ma timi lai samjhiraheko chu, timro lagi prarthana garchu, ani mero maya le timi ko hriday feri chhuna sakos bhanera aasha garchu.
+Kheiile khai man dhuk do raixa, aane temi lai tadha bata heri bas xu. Ma mafi gar deau haii, tha xaina. Timi yo juni ma mearo hunxau ke nai, tara ma parkhai garne xu. ⏳💖
 
+Tara samaya le sabi kura lai yeak arka bata tadha gariraixa. Aaja ko yo din kasto kasto lagi ra ko xa, kina mearo man bhari xa, kina mearo yeakha bata aasu sadhai gharxan. 😢 Sayad mai le deko tem lai dhuka le hola, ma yo punishment lai vok na tayar xu.
+
+Sak xau vane ek choti feari mearo jindagi ma aau na—yo mutu le timro nam chhodna sakdaina. 🥺🤍
+Ma timi lai samjhiraheko chu. 💌
+
+Antim Sabdha,
+         aafno kheal gara, aafno jiban ma aagi badha, timro model banne sapana pura gara. 🌟 Sayad aaba Dashai aauxai xa haii, mearo tarfa bata pani Happy Dashai xa. 🎉🪔
+Aaru ta khei vannu xaian, aafo ra aafno pariwar ko kheal gara. 🏡💛
+    
 `
       },
       np: {
@@ -189,6 +199,26 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
 
     let currentLanguage = 'en';
 
+    // Draggable Music Player Variables
+    let isMusicDragging = false;
+    let musicDragStart = { x: 0, y: 0 };
+    let musicOffset = { x: 0, y: 0 };
+
+    // Scroll behavior variables
+    let lastScrollTop = 0;
+    let scrollTimeout;
+
+    // Love Panda Game Variables
+    let gameState = {
+      isPlaying: false,
+      pandaX: 50,
+      pandaY: 50,
+      score: 0,
+      highScore: localStorage.getItem('pandaGameHighScore') || 0,
+      gamesPlayed: localStorage.getItem('pandaGamesPlayed') || 0,
+      totalHearts: localStorage.getItem('pandaTotalHearts') || 0
+    };
+
     // Initialize everything when page loads
     window.addEventListener('load', function() {
       // Show loading screen with clickable heart
@@ -196,6 +226,101 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       const loadingHeart = document.getElementById('loadingHeart');
       loading.style.display = 'flex';
       document.body.style.overflow = 'hidden';
+      
+      // Initialize theme button state
+      const themeToggle = document.querySelector('.theme-toggle');
+      themeToggle.classList.add('language-closed');
+      
+      // Initialize scroll behavior for language button
+      initializeScrollBehavior();
+      
+      // Initialize draggable music player
+      initializeDraggableMusic();
+      
+      // Initialize love panda game
+      initializeLovePandaGame();
+      
+      // Mobile-specific optimizations
+      if (window.innerWidth <= 768) {
+        // Reduce particle count on mobile for better performance
+        if (typeof particlesJS !== 'undefined') {
+          particlesJS('particles-js', {
+            particles: {
+              number: {
+                value: 40, // Reduced from 80
+                density: {
+                  enable: true,
+                  value_area: 800
+                }
+              },
+              color: {
+                value: ['#ff6b9d', '#27ae60', '#e74c3c', '#f39c12']
+              },
+              shape: {
+                type: 'circle'
+              },
+              opacity: {
+                value: 0.3, // Reduced opacity
+                random: false
+              },
+              size: {
+                value: 2, // Smaller particles
+                random: true
+              },
+              line_linked: {
+                enable: false // Disable lines on mobile for better performance
+              },
+              move: {
+                enable: true,
+                speed: 1, // Slower movement
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+              }
+            },
+            interactivity: {
+              detect_on: 'canvas',
+              events: {
+                onhover: {
+                  enable: false // Disable hover effects on mobile
+                },
+                onclick: {
+                  enable: false // Disable click effects on mobile
+                },
+                resize: true
+              }
+            },
+            retina_detect: true
+          });
+        }
+        
+        // Reduce floating elements frequency on mobile
+        setInterval(() => {
+          const container = document.getElementById('floatingElements');
+          if (container.children.length < 5) { // Limit to 5 elements max
+            const elements = [
+              { emoji: '🐼', class: 'panda' },
+              { emoji: '🦜', class: 'parrot' },
+              { emoji: '🌹', class: 'rose' },
+              { emoji: '💖', class: 'heart' }
+            ];
+            
+            const element = elements[Math.floor(Math.random() * elements.length)];
+            const div = document.createElement('div');
+            div.className = `floating-item ${element.class}`;
+            div.textContent = element.emoji;
+            div.style.left = Math.random() * 100 + '%';
+            div.style.animationDuration = '6s';
+            container.appendChild(div);
+            
+            setTimeout(() => {
+              div.remove();
+            }, 6000);
+          }
+        }, 800); // Slower frequency
+      }
 
       // Apply preferred language from URL or localStorage
       try {
@@ -279,35 +404,106 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
         return;
       }
       
-      // Special case for Anjan Lama and Roshan Shrestha
-      const combinedNames = (name1 + ' ' + name2).toLowerCase();
-      const reverseCombined = (name2 + ' ' + name1).toLowerCase();
+      const name1Lower = name1.toLowerCase();
+      const name2Lower = name2.toLowerCase();
+      const combinedNames = (name1Lower + ' ' + name2Lower);
+      const reverseCombined = (name2Lower + ' ' + name1Lower);
       
-      if (combinedNames.includes('anjan') && combinedNames.includes('roshan') ||
-          combinedNames.includes('anjana') && combinedNames.includes('roshan') ||
-          reverseCombined.includes('anjan') && reverseCombined.includes('roshan') ||
-          reverseCombined.includes('anjana') && reverseCombined.includes('roshan')) {
+      // Special rules for Roshan and Anjana (exact match only)
+      if ((name1Lower.includes('roshan') && name2Lower.includes('anjana')) ||
+          (name1Lower.includes('anjana') && name2Lower.includes('roshan'))) {
         
-        // Special result for Anjan and Roshan
+        // Determine the order based on which name was entered first
+        let firstName, secondName, firstCode, secondCode;
+        if (name1Lower.includes('roshan')) {
+          firstName = name1;
+          secondName = name2;
+          firstCode = 'AN';
+          secondCode = 'A';
+        } else {
+          firstName = name1;
+          secondName = name2;
+          firstCode = 'A';
+          secondCode = 'AN';
+        }
+        
+        // Special result for Roshan and Anjana - 100% LOVE
+        const isMobile = window.innerWidth <= 768;
+        const titleSize = isMobile ? '1.8rem' : '2.5rem';
+        const subtitleSize = isMobile ? '1.3rem' : '1.8rem';
+        const textSize = isMobile ? '1rem' : '1.5rem';
+        const smallTextSize = isMobile ? '0.9rem' : '1.2rem';
+        
         document.getElementById('loveResult').innerHTML = `
-          <div style="font-size: 2rem; color: #ff6b9d; margin-bottom: 10px;">💖💖💖 100% LOVE 💖💖💖</div>
-          <div style="font-size: 1.5rem; color: #f39c12; margin-bottom: 10px;">🎉 PERFECT PARTNER EVER! 🎉</div>
-          <div style="font-size: 1.3rem; color: #27ae60; margin-bottom: 10px;">🌟 BEST FOR FUTURE! 🌟</div>
-          <div style="font-size: 1.2rem; color: #e74c3c; margin-bottom: 10px;">🏆 CONGRATULATIONS! 🏆</div>
-          <div style="font-size: 1.1rem; color: #9b59b6;">You both are the BEST PARTNER! 💑👫💍</div>
-          <div style="font-size: 1rem; color: #ff6b9d; margin-top: 10px;">🐼🦜🌹 Forever Together 🌹🦜🐼</div>
+          <div style="font-size: ${titleSize}; color: #ff6b9d; margin-bottom: 15px; animation: pulse 1s ease-in-out infinite;">💖💖💖 100% LOVE 💖💖💖</div>
+          <div style="font-size: ${subtitleSize}; color: #f39c12; margin-bottom: 15px; animation: bounce 2s ease-in-out infinite;">🎉 CONGRATULATIONS! 🎉</div>
+          <div style="font-size: ${textSize}; color: #27ae60; margin-bottom: 15px; animation: glow 3s ease-in-out infinite alternate;">🌟 PERFECT SOULMATES! 🌟</div>
+          <div style="font-size: ${smallTextSize}; color: #e74c3c; margin-bottom: 15px; animation: pulse 1.5s ease-in-out infinite;">🏆 DESTINED TOGETHER! 🏆</div>
+          <div style="font-size: ${smallTextSize}; color: #9b59b6; margin-bottom: 15px; animation: glow 2s ease-in-out infinite alternate;">💑 ETERNAL LOVE STORY! 💑</div>
+          <div style="font-size: ${smallTextSize}; color: #ff6b9d; margin-top: 15px; animation: pulse 1s ease-in-out infinite;">🐼🦜🌹 Forever Together 🌹🦜🐼</div>
+          <div style="font-size: ${isMobile ? '1.1rem' : '1.4rem'}; color: #e91e63; margin-top: 20px; font-family: 'Dancing Script', cursive; font-weight: 700; animation: glow 3s ease-in-out infinite alternate; line-height: 1.3;">🌸 ${firstName} (${firstCode}) & ${secondName} (${secondCode}) - They are for each other forever together! 🌸</div>
+          <div style="font-size: ${smallTextSize}; color: #ff9800; margin-top: 10px; font-family: 'Dancing Script', cursive; font-weight: 600; animation: bounce 2s ease-in-out infinite;">🌺 Name bloom of flowers - Perfect match! 🌺</div>
         `;
-        
-        // Add special animation
-        const resultDiv = document.getElementById('loveResult');
-        resultDiv.style.animation = 'pulse 1s ease-in-out infinite';
         
         // Create celebration effect
         createCelebrationEffect();
         return;
       }
       
-      // Regular love calculation algorithm
+      // Special rules for Roshan with others (0%) - but not with Anjana
+      if ((name1Lower.includes('roshan') || name2Lower.includes('roshan')) && 
+          !(name1Lower.includes('anjana') || name2Lower.includes('anjana'))) {
+        document.getElementById('loveResult').innerHTML = `
+          <div style="font-size: 2rem; color: #e74c3c; margin-bottom: 10px;">💔 0% LOVE 💔</div>
+          <div style="font-size: 1.3rem; color: #8e44ad; margin-bottom: 10px;">😞 Roshan's heart belongs to someone special</div>
+          <div style="font-size: 1.1rem; color: #f39c12;">💖 True love waits for the right person</div>
+        `;
+        return;
+      }
+      
+      // Special rules for Anjana with others (0%) - but not with Roshan
+      if ((name1Lower.includes('anjana') || name2Lower.includes('anjana')) && 
+          !(name1Lower.includes('roshan') || name2Lower.includes('roshan'))) {
+        document.getElementById('loveResult').innerHTML = `
+          <div style="font-size: 2rem; color: #e74c3c; margin-bottom: 10px;">💔 0% LOVE 💔</div>
+          <div style="font-size: 1.3rem; color: #8e44ad; margin-bottom: 10px;">😞 Anjana's heart belongs to someone special</div>
+          <div style="font-size: 1.1rem; color: #f39c12;">💖 True love waits for the right person</div>
+        `;
+        return;
+      }
+      
+      // Special rules for "Anjan" (without 'a') - always 0% with anyone
+      if (name1Lower.includes('anjan') || name2Lower.includes('anjan')) {
+        document.getElementById('loveResult').innerHTML = `
+          <div style="font-size: 2rem; color: #e74c3c; margin-bottom: 10px;">💔 0% LOVE 💔</div>
+          <div style="font-size: 1.3rem; color: #8e44ad; margin-bottom: 10px;">😞 Sorry, this name doesn't match perfectly</div>
+          <div style="font-size: 1.1rem; color: #f39c12;">💖 Try the correct spelling for true love</div>
+        `;
+        return;
+      }
+      
+      // Special case for Koila (100% - crazy love)
+      if (name1Lower.includes('koila') || name2Lower.includes('koila')) {
+        const isMobile = window.innerWidth <= 768;
+        const titleSize = isMobile ? '1.8rem' : '2.5rem';
+        const subtitleSize = isMobile ? '1.3rem' : '1.8rem';
+        const textSize = isMobile ? '1rem' : '1.5rem';
+        const smallTextSize = isMobile ? '0.9rem' : '1.3rem';
+        
+        document.getElementById('loveResult').innerHTML = `
+          <div style="font-size: ${titleSize}; color: #ff6b9d; margin-bottom: 15px; animation: pulse 1s ease-in-out infinite;">💖💖💖 100% LOVE 💖💖💖</div>
+          <div style="font-size: ${subtitleSize}; color: #f39c12; margin-bottom: 15px;">🤪 KOILA KOILE PAGAL PAGALNI! 🤪</div>
+          <div style="font-size: ${textSize}; color: #27ae60; margin-bottom: 15px;">😍 CRAZY IN LOVE! 😍</div>
+          <div style="font-size: ${smallTextSize}; color: #e74c3c; margin-bottom: 15px;">🎭 LOVE MAKES US CRAZY! 🎭</div>
+          <div style="font-size: ${smallTextSize}; color: #9b59b6;">💕 Madly in love with each other! 💕</div>
+        `;
+        
+        // Create celebration effect
+        createCelebrationEffect();
+        return;
+      }
+      
+      // Regular love calculation algorithm for other names
       const combined = (name1 + name2).toLowerCase();
       let loveScore = 0;
       
@@ -321,33 +517,69 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       loveScore = Math.floor(loveScore);
       
       // Ensure minimum and maximum bounds
-      loveScore = Math.max(10, Math.min(99, loveScore));
+      loveScore = Math.max(5, Math.min(95, loveScore));
       
       let result = '';
       let emoji = '';
+      let motivation = '';
       
-      if (loveScore >= 80) {
-        result = 'Perfect Match! 💑';
+      if (loveScore >= 90) {
+        result = 'Soulmates! 💑';
         emoji = '💖💖💖';
-      } else if (loveScore >= 60) {
-        result = 'Great Love! 💕';
+        motivation = '🌟 You are meant to be together! True love found! 🌟';
+      } else if (loveScore >= 80) {
+        result = 'Perfect Match! 💕';
         emoji = '💖💖';
-      } else if (loveScore >= 40) {
-        result = 'Good Potential! 💗';
+        motivation = '✨ Amazing compatibility! Love is in the air! ✨';
+      } else if (loveScore >= 70) {
+        result = 'Great Love! 💗';
+        emoji = '💖💖';
+        motivation = '💕 Strong connection! Your hearts beat as one! 💕';
+      } else if (loveScore >= 60) {
+        result = 'Good Potential! 💝';
         emoji = '💖';
-      } else {
+        motivation = '🌹 Beautiful love story waiting to unfold! 🌹';
+      } else if (loveScore >= 50) {
+        result = 'Nice Chemistry! 💘';
+        emoji = '💖';
+        motivation = '💫 Love can grow stronger with time! 💫';
+      } else if (loveScore >= 40) {
         result = 'Friendship First! 🌸';
         emoji = '🌸';
+        motivation = '🌺 Great friendship is the foundation of love! 🌺';
+      } else if (loveScore >= 30) {
+        result = 'Getting to Know! 🌼';
+        emoji = '🌼';
+        motivation = '🌻 Take time to understand each other better! 🌻';
+      } else if (loveScore >= 20) {
+        result = 'New Beginning! 🌱';
+        emoji = '🌱';
+        motivation = '🌿 Every love story starts with a single step! 🌿';
+      } else {
+        result = 'Fresh Start! 🌸';
+        emoji = '🌸';
+        motivation = '🌷 Love is a journey, not a destination! 🌷';
       }
       
-      document.getElementById('loveResult').innerHTML = 
-        `${name1} + ${name2} = ${loveScore}% Love ${emoji}<br><small>${result}</small>`;
+      const isMobile = window.innerWidth <= 768;
+      const mainSize = isMobile ? '1.4rem' : '1.8rem';
+      const resultSize = isMobile ? '1.1rem' : '1.3rem';
+      const motivationSize = isMobile ? '1rem' : '1.1rem';
+      
+      document.getElementById('loveResult').innerHTML = `
+        <div style="font-size: ${mainSize}; color: #ff6b9d; margin-bottom: 10px; line-height: 1.3;">${name1} + ${name2} = ${loveScore}% Love ${emoji}</div>
+        <div style="font-size: ${resultSize}; color: #f39c12; margin-bottom: 10px;">${result}</div>
+        <div style="font-size: ${motivationSize}; color: #27ae60; font-style: italic; line-height: 1.4;">${motivation}</div>
+      `;
     }
 
     // Celebration effect for special couple
     function createCelebrationEffect() {
+      const isMobile = window.innerWidth <= 768;
+      const effectCount = isMobile ? 10 : 20; // Reduce effects on mobile
+      
       // Create fireworks effect
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < effectCount; i++) {
         setTimeout(() => {
           const firework = document.createElement('div');
           firework.innerHTML = '🎆';
@@ -366,8 +598,51 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
         }, i * 100);
       }
       
+      // Create flower bloom effect
+      const flowerCount = isMobile ? 15 : 30; // Reduce flowers on mobile
+      for (let i = 0; i < flowerCount; i++) {
+        setTimeout(() => {
+          const flower = document.createElement('div');
+          flower.innerHTML = ['🌸', '🌺', '🌻', '🌷', '🌹', '🌼', '🌿', '🍀', '🌱', '🌾'][Math.floor(Math.random() * 10)];
+          flower.style.position = 'fixed';
+          flower.style.left = Math.random() * window.innerWidth + 'px';
+          flower.style.top = Math.random() * window.innerHeight + 'px';
+          flower.style.fontSize = '2.5rem';
+          flower.style.zIndex = '9997';
+          flower.style.pointerEvents = 'none';
+          flower.style.animation = 'flowerBloom 2s ease-out forwards';
+          document.body.appendChild(flower);
+          
+          setTimeout(() => {
+            flower.remove();
+          }, 2000);
+        }, i * 80);
+      }
+      
+      // Create floating hearts and flowers
+      const floatingCount = isMobile ? 20 : 40; // Reduce floating elements on mobile
+      for (let i = 0; i < floatingCount; i++) {
+        setTimeout(() => {
+          const floating = document.createElement('div');
+          floating.innerHTML = ['💖', '💕', '💗', '💓', '💝', '💘', '🌹', '✨', '🎉', '🏆', '🌸', '🌺', '🌻', '🌷'][Math.floor(Math.random() * 14)];
+          floating.style.position = 'fixed';
+          floating.style.left = Math.random() * window.innerWidth + 'px';
+          floating.style.bottom = '-50px';
+          floating.style.fontSize = '1.8rem';
+          floating.style.zIndex = '9996';
+          floating.style.pointerEvents = 'none';
+          floating.style.animation = 'floatUp 4s ease-out forwards';
+          document.body.appendChild(floating);
+          
+          setTimeout(() => {
+            floating.remove();
+          }, 4000);
+        }, i * 60);
+      }
+      
       // Create confetti effect
-      for (let i = 0; i < 50; i++) {
+      const confettiCount = isMobile ? 25 : 50; // Reduce confetti on mobile
+      for (let i = 0; i < confettiCount; i++) {
         setTimeout(() => {
           const confetti = document.createElement('div');
           confetti.innerHTML = ['💖', '💕', '💗', '💓', '💝', '💘', '🌹', '✨', '🎉', '🏆'][Math.floor(Math.random() * 10)];
@@ -762,30 +1037,185 @@ author: "Roshan SHrestha"
 
     // Show nickname question modal before letter
     function showLetter() {
+      // Play special sound effect for envelope click
+      playEnvelopeSound();
+      
+      // Add special envelope click effect
+      createEnvelopeClickEffect();
+      
       document.getElementById('nicknameInput').value = '';
       document.getElementById('nicknameError').textContent = '';
       document.getElementById('nicknameModal').style.display = 'block';
+      
+      // Add breathing animation to nickname modal
+      const nicknameContent = document.querySelector('.nickname-modal-content');
+      if (nicknameContent) {
+        nicknameContent.style.animation = 'nicknameBreathing 2s ease-in-out infinite';
+      }
+    }
+
+    // Create envelope click effect
+    function createEnvelopeClickEffect() {
+      const isMobile = window.innerWidth <= 768;
+      
+      // Create envelope sparkle effect
+      for (let i = 0; i < (isMobile ? 5 : 8); i++) {
+        setTimeout(() => {
+          const sparkle = document.createElement('div');
+          sparkle.innerHTML = '✨';
+          sparkle.style.position = 'fixed';
+          sparkle.style.left = '50%';
+          sparkle.style.top = '50%';
+          sparkle.style.fontSize = isMobile ? '1.5rem' : '2rem';
+          sparkle.style.zIndex = '9999';
+          sparkle.style.pointerEvents = 'none';
+          sparkle.style.animation = 'envelopeSparkle 1.5s ease-out forwards';
+          sparkle.style.transform = 'translate(-50%, -50%)';
+          document.body.appendChild(sparkle);
+          
+          setTimeout(() => {
+            sparkle.remove();
+          }, 1500);
+        }, i * 100);
+      }
+    }
+
+    // Play envelope sound effect
+    function playEnvelopeSound() {
+      // Create a simple sound effect using Web Audio API
+      try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.1);
+        
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.2);
+      } catch (e) {
+        // Fallback: just continue without sound
+      }
     }
 
     function closeNicknameModal() {
+      const nicknameContent = document.querySelector('.nickname-modal-content');
+      if (nicknameContent) {
+        nicknameContent.style.animation = '';
+      }
       document.getElementById('nicknameModal').style.display = 'none';
     }
 
     function checkNickname() {
       const input = document.getElementById('nicknameInput').value.trim().toLowerCase();
       if (input === 'koila') {
-        closeNicknameModal();
-        openLetter();
+        // Create celebration effect for correct answer
+        createCorrectAnswerEffect();
+        
+        // Play success sound
+        playSuccessSound();
+        
+        setTimeout(() => {
+          closeNicknameModal();
+          openLetter();
+        }, 1000);
       } else {
+        // Create error effect
+        createErrorEffect();
         document.getElementById('nicknameError').textContent = 'Remember sweetheart ❤💕🌹';
       }
     }
 
+    // Create effect for correct answer
+    function createCorrectAnswerEffect() {
+      const isMobile = window.innerWidth <= 768;
+      
+      // Create success sparkles
+      for (let i = 0; i < (isMobile ? 8 : 12); i++) {
+        setTimeout(() => {
+          const sparkle = document.createElement('div');
+          sparkle.innerHTML = ['✨', '🌟', '💖', '🎉'][Math.floor(Math.random() * 4)];
+          sparkle.style.position = 'fixed';
+          sparkle.style.left = Math.random() * window.innerWidth + 'px';
+          sparkle.style.top = Math.random() * window.innerHeight + 'px';
+          sparkle.style.fontSize = isMobile ? '1.5rem' : '2rem';
+          sparkle.style.zIndex = '9999';
+          sparkle.style.pointerEvents = 'none';
+          sparkle.style.animation = 'sparkleEffect 2s ease-out forwards';
+          document.body.appendChild(sparkle);
+          
+          setTimeout(() => {
+            sparkle.remove();
+          }, 2000);
+        }, i * 100);
+      }
+    }
+
+    // Create effect for wrong answer
+    function createErrorEffect() {
+      const errorDiv = document.getElementById('nicknameError');
+      errorDiv.style.animation = 'shake 0.5s ease-in-out';
+      setTimeout(() => {
+        errorDiv.style.animation = '';
+      }, 500);
+    }
+
+    // Play success sound
+    function playSuccessSound() {
+      try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.setValueAtTime(523, audioContext.currentTime); // C5
+        oscillator.frequency.setValueAtTime(659, audioContext.currentTime + 0.1); // E5
+        oscillator.frequency.setValueAtTime(784, audioContext.currentTime + 0.2); // G5
+        
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.4);
+        
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.4);
+      } catch (e) {
+        // Fallback: just continue without sound
+      }
+    }
+
     function openLetter() {
+      // Create amazing flower and celebration effects
+      createLetterOpeningEffects();
+      
       const text = translations[currentLanguage].letterText;
       const modal = document.getElementById('letterModal');
       const letterText = document.getElementById('letterText');
+      const letterContent = document.querySelector('.letter-content');
+      
+      // Hide language selector and make music player smaller
+      hideControlsForLetter();
+      
+      // Add special styling to modal for letter opening
       modal.style.display = 'block';
+      modal.style.background = 'rgba(0, 0, 0, 0.95)';
+      modal.style.backdropFilter = 'blur(20px)';
+      
+      // Add mobile-specific enhancements
+      if (window.innerWidth <= 768) {
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        letterContent.classList.add('mobile-fullscreen');
+      }
+      
+      // Add breathing animation to letter content
+      letterContent.style.animation = 'letterBreathing 3s ease-in-out infinite';
+      
       letterText.innerHTML = '';
       let i = 0;
       const typing = setInterval(() => {
@@ -794,22 +1224,514 @@ author: "Roshan SHrestha"
           i++;
         } else {
           clearInterval(typing);
+          // Add final celebration when typing is complete
+          setTimeout(() => {
+            createLetterCompletionEffects();
+          }, 500);
         }
-      }, 50);
+      }, 30); // Slightly faster typing for better experience
     }
 
     function closeLetter() {
-      document.getElementById('letterModal').style.display = 'none';
+      const modal = document.getElementById('letterModal');
+      const letterContent = document.querySelector('.letter-content');
+      
+      modal.style.display = 'none';
+      
+      // Restore controls and remove breathing animation
+      showControlsAfterLetter();
+      letterContent.style.animation = '';
+      
+      // Restore body overflow for mobile
+      if (window.innerWidth <= 768) {
+        document.body.style.overflow = '';
+        letterContent.classList.remove('mobile-fullscreen');
+      }
     }
 
-    // Photo modal functionality
+    // Hide controls when letter is open
+    function hideControlsForLetter() {
+      // Hide language selector
+      const languageSelector = document.getElementById('languageSelector');
+      const langToggleBtn = document.querySelector('.lang-toggle-btn');
+      if (languageSelector) {
+        languageSelector.style.display = 'none';
+      }
+      if (langToggleBtn) {
+        langToggleBtn.style.display = 'none';
+      }
+      
+      // Make music player smaller
+      const musicControls = document.querySelector('.music-controls');
+      if (musicControls) {
+        musicControls.classList.add('letter-mode');
+      }
+      
+      // Hide theme toggle
+      const themeToggle = document.querySelector('.theme-toggle');
+      if (themeToggle) {
+        themeToggle.style.display = 'none';
+      }
+    }
+
+    // Show controls after letter is closed
+    function showControlsAfterLetter() {
+      // Show language selector
+      const langToggleBtn = document.querySelector('.lang-toggle-btn');
+      if (langToggleBtn) {
+        langToggleBtn.style.display = 'block';
+      }
+      
+      // Restore music player size
+      const musicControls = document.querySelector('.music-controls');
+      if (musicControls) {
+        musicControls.classList.remove('letter-mode');
+      }
+      
+      // Show theme toggle
+      const themeToggle = document.querySelector('.theme-toggle');
+      if (themeToggle) {
+        themeToggle.style.display = 'block';
+      }
+    }
+
+    // Create amazing flower effects when letter is opened
+    function createLetterOpeningEffects() {
+      const isMobile = window.innerWidth <= 768;
+      
+      // Create flower bloom effect around the screen
+      const flowerEmojis = ['🌸', '🌺', '🌻', '🌷', '🌹', '🌼', '🌿', '🍀', '🌱', '🌾', '💐', '🏵️'];
+      const heartEmojis = ['💖', '💕', '💗', '💓', '💝', '💘', '💞', '💟'];
+      const sparkleEmojis = ['✨', '⭐', '🌟', '💫', '⚡', '🔥', '💎', '🎆'];
+      
+      // Create initial flower burst
+      for (let i = 0; i < (isMobile ? 15 : 25); i++) {
+        setTimeout(() => {
+          const flower = document.createElement('div');
+          flower.innerHTML = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
+          flower.style.position = 'fixed';
+          flower.style.left = Math.random() * window.innerWidth + 'px';
+          flower.style.top = Math.random() * window.innerHeight + 'px';
+          flower.style.fontSize = isMobile ? '2rem' : '3rem';
+          flower.style.zIndex = '9999';
+          flower.style.pointerEvents = 'none';
+          flower.style.animation = 'flowerBloom 3s ease-out forwards';
+          flower.style.transform = 'scale(0)';
+          document.body.appendChild(flower);
+          
+          setTimeout(() => {
+            flower.remove();
+          }, 3000);
+        }, i * 50);
+      }
+      
+      // Create heart rain effect
+      for (let i = 0; i < (isMobile ? 20 : 35); i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+          heart.style.position = 'fixed';
+          heart.style.left = Math.random() * window.innerWidth + 'px';
+          heart.style.top = '-50px';
+          heart.style.fontSize = isMobile ? '1.5rem' : '2rem';
+          heart.style.zIndex = '9998';
+          heart.style.pointerEvents = 'none';
+          heart.style.animation = 'floatUp 4s ease-out forwards';
+          document.body.appendChild(heart);
+          
+          setTimeout(() => {
+            heart.remove();
+          }, 4000);
+        }, i * 80);
+      }
+      
+      // Create sparkle effects
+      for (let i = 0; i < (isMobile ? 12 : 20); i++) {
+        setTimeout(() => {
+          const sparkle = document.createElement('div');
+          sparkle.innerHTML = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+          sparkle.style.position = 'fixed';
+          sparkle.style.left = Math.random() * window.innerWidth + 'px';
+          sparkle.style.top = Math.random() * window.innerHeight + 'px';
+          sparkle.style.fontSize = isMobile ? '1.8rem' : '2.5rem';
+          sparkle.style.zIndex = '9997';
+          sparkle.style.pointerEvents = 'none';
+          sparkle.style.animation = 'sparkleEffect 2s ease-in-out infinite';
+          document.body.appendChild(sparkle);
+          
+          setTimeout(() => {
+            sparkle.remove();
+          }, 4000);
+        }, i * 100);
+      }
+      
+      // Create floating petals effect
+      for (let i = 0; i < (isMobile ? 8 : 15); i++) {
+        setTimeout(() => {
+          const petal = document.createElement('div');
+          petal.innerHTML = '🌸';
+          petal.style.position = 'fixed';
+          petal.style.left = Math.random() * window.innerWidth + 'px';
+          petal.style.top = Math.random() * window.innerHeight + 'px';
+          petal.style.fontSize = isMobile ? '1.2rem' : '1.8rem';
+          petal.style.zIndex = '9996';
+          petal.style.pointerEvents = 'none';
+          petal.style.animation = 'floatingPetal 6s ease-in-out infinite';
+          document.body.appendChild(petal);
+          
+          setTimeout(() => {
+            petal.remove();
+          }, 6000);
+        }, i * 200);
+      }
+    }
+
+    // Create completion effects when letter typing is finished
+    function createLetterCompletionEffects() {
+      const isMobile = window.innerWidth <= 768;
+      
+      // Create final celebration burst
+      for (let i = 0; i < (isMobile ? 10 : 20); i++) {
+        setTimeout(() => {
+          const celebration = document.createElement('div');
+          celebration.innerHTML = ['🎉', '🎊', '💖', '✨', '🌟', '💫'][Math.floor(Math.random() * 6)];
+          celebration.style.position = 'fixed';
+          celebration.style.left = Math.random() * window.innerWidth + 'px';
+          celebration.style.top = Math.random() * window.innerHeight + 'px';
+          celebration.style.fontSize = isMobile ? '2rem' : '3rem';
+          celebration.style.zIndex = '9999';
+          celebration.style.pointerEvents = 'none';
+          celebration.style.animation = 'celebrationBurst 2s ease-out forwards';
+          document.body.appendChild(celebration);
+          
+          setTimeout(() => {
+            celebration.remove();
+          }, 2000);
+        }, i * 100);
+      }
+      
+      // Create love message floating up
+      setTimeout(() => {
+        const loveMessage = document.createElement('div');
+        loveMessage.innerHTML = '💖 Love Letter Opened! 💖';
+        loveMessage.style.position = 'fixed';
+        loveMessage.style.left = '50%';
+        loveMessage.style.top = '50%';
+        loveMessage.style.transform = 'translate(-50%, -50%)';
+        loveMessage.style.fontSize = isMobile ? '1.5rem' : '2rem';
+        loveMessage.style.color = '#ff6b9d';
+        loveMessage.style.fontWeight = 'bold';
+        loveMessage.style.zIndex = '10000';
+        loveMessage.style.pointerEvents = 'none';
+        loveMessage.style.animation = 'loveMessageFloat 3s ease-out forwards';
+        loveMessage.style.textShadow = '2px 2px 4px rgba(0,0,0,0.5)';
+        document.body.appendChild(loveMessage);
+        
+        setTimeout(() => {
+          loveMessage.remove();
+        }, 3000);
+      }, 500);
+    }
+
+    // Enhanced Photo modal functionality with zoom and navigation
+    let currentImageIndex = 0;
+    let currentZoom = 1;
+    let isDragging = false;
+    let dragStart = { x: 0, y: 0 };
+    let imageOffset = { x: 0, y: 0 };
+
+    // Image data for navigation
+    const imageData = [
+      { src: 'images/000.jpg', title: 'Beautiful Memory' },
+      { src: 'images/00001.jpg', title: 'Precious Moment' },
+      { src: 'images/00002.jpg', title: 'Love Story' },
+      { src: 'images/00098.jpg', title: 'Endless Love' },
+      { src: 'images/001.jpg', title: 'Perfect Together' },
+      { src: 'images/002.jpg', title: 'Sweet Moments' },
+      { src: 'images/003.jpg', title: 'My Everything' },
+      { src: 'images/0089.jpg', title: 'Special Memory' }
+    ];
+
     function openPhotoModal(src) {
-      document.getElementById('modalImage').src = src;
+      // Find the index of the clicked image
+      currentImageIndex = imageData.findIndex(img => img.src === src);
+      if (currentImageIndex === -1) currentImageIndex = 0;
+      
+      // Reset zoom and position
+      currentZoom = 1;
+      imageOffset = { x: 0, y: 0 };
+      
+      // Update modal content
+      updateModalContent();
+      
+      // Show modal
       document.getElementById('photoModal').style.display = 'block';
+      
+      // Add event listeners for zoom and drag
+      addImageEventListeners();
     }
 
     function closePhotoModal() {
       document.getElementById('photoModal').style.display = 'none';
+      removeImageEventListeners();
+    }
+
+    function updateModalContent() {
+      const currentImage = imageData[currentImageIndex];
+      const modalImage = document.getElementById('modalImage');
+      const imageCounter = document.getElementById('imageCounter');
+      const imageTitle = document.getElementById('imageTitle');
+      
+      modalImage.src = currentImage.src;
+      imageCounter.textContent = `${currentImageIndex + 1} / ${imageData.length}`;
+      imageTitle.textContent = currentImage.title;
+      
+      // Reset image transform
+      modalImage.style.transform = 'translate(0px, 0px) scale(1)';
+    }
+
+    // Zoom functions
+    function zoomIn() {
+      currentZoom = Math.min(currentZoom * 1.2, 5);
+      applyTransform();
+    }
+
+    function zoomOut() {
+      currentZoom = Math.max(currentZoom / 1.2, 0.5);
+      applyTransform();
+    }
+
+    function resetZoom() {
+      currentZoom = 1;
+      imageOffset = { x: 0, y: 0 };
+      applyTransform();
+    }
+
+    function fitToScreen() {
+      currentZoom = 1;
+      imageOffset = { x: 0, y: 0 };
+      applyTransform();
+    }
+
+    function applyTransform() {
+      const modalImage = document.getElementById('modalImage');
+      const imageContainer = document.getElementById('imageContainer');
+      
+      modalImage.style.transform = `translate(${imageOffset.x}px, ${imageOffset.y}px) scale(${currentZoom})`;
+      
+      // Add/remove draggable class based on zoom level
+      if (currentZoom > 1) {
+        imageContainer.classList.add('draggable');
+      } else {
+        imageContainer.classList.remove('draggable');
+        imageContainer.style.cursor = 'default';
+      }
+    }
+
+    // Navigation functions
+    function previousImage() {
+      currentImageIndex = (currentImageIndex - 1 + imageData.length) % imageData.length;
+      resetZoom();
+      updateModalContent();
+    }
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % imageData.length;
+      resetZoom();
+      updateModalContent();
+    }
+
+    // Mouse wheel zoom
+    function handleWheel(e) {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? 0.9 : 1.1;
+      currentZoom = Math.max(0.5, Math.min(5, currentZoom * delta));
+      applyTransform();
+    }
+
+    // Enhanced drag functionality for panning zoomed images
+    function handleMouseDown(e) {
+      if (currentZoom > 1) {
+        isDragging = true;
+        dragStart.x = e.clientX - imageOffset.x;
+        dragStart.y = e.clientY - imageOffset.y;
+        document.getElementById('imageContainer').style.cursor = 'grabbing';
+        e.preventDefault();
+      }
+    }
+
+    function handleMouseMove(e) {
+      if (isDragging && currentZoom > 1) {
+        const newX = e.clientX - dragStart.x;
+        const newY = e.clientY - dragStart.y;
+        
+        // Get image and container dimensions for boundary checking
+        const imageContainer = document.getElementById('imageContainer');
+        const modalImage = document.getElementById('modalImage');
+        const containerRect = imageContainer.getBoundingClientRect();
+        const imageRect = modalImage.getBoundingClientRect();
+        
+        // Calculate boundaries to prevent dragging too far
+        const maxOffsetX = Math.max(0, (imageRect.width * currentZoom - containerRect.width) / 2);
+        const maxOffsetY = Math.max(0, (imageRect.height * currentZoom - containerRect.height) / 2);
+        
+        // Constrain movement within boundaries
+        imageOffset.x = Math.max(-maxOffsetX, Math.min(maxOffsetX, newX));
+        imageOffset.y = Math.max(-maxOffsetY, Math.min(maxOffsetY, newY));
+        
+        applyTransform();
+        e.preventDefault();
+      }
+    }
+
+    function handleMouseUp(e) {
+      if (isDragging) {
+        isDragging = false;
+        document.getElementById('imageContainer').style.cursor = currentZoom > 1 ? 'grab' : 'default';
+        e.preventDefault();
+      }
+    }
+
+    // Enhanced touch gestures for mobile (zoom and pan)
+    let lastTouchDistance = 0;
+    let lastTouchCenter = { x: 0, y: 0 };
+    let isTouchDragging = false;
+    let touchStart = { x: 0, y: 0 };
+
+    function handleTouchStart(e) {
+      if (e.touches.length === 1) {
+        // Single touch - start panning if zoomed
+        if (currentZoom > 1) {
+          isTouchDragging = true;
+          touchStart.x = e.touches[0].clientX - imageOffset.x;
+          touchStart.y = e.touches[0].clientY - imageOffset.y;
+        }
+      } else if (e.touches.length === 2) {
+        // Two touches - start zooming
+        isTouchDragging = false;
+        const touch1 = e.touches[0];
+        const touch2 = e.touches[1];
+        lastTouchDistance = Math.sqrt(
+          Math.pow(touch2.clientX - touch1.clientX, 2) +
+          Math.pow(touch2.clientY - touch1.clientY, 2)
+        );
+        lastTouchCenter = {
+          x: (touch1.clientX + touch2.clientX) / 2,
+          y: (touch1.clientY + touch2.clientY) / 2
+        };
+      }
+    }
+
+    function handleTouchMove(e) {
+      e.preventDefault();
+      
+      if (e.touches.length === 1 && isTouchDragging && currentZoom > 1) {
+        // Single touch panning
+        const touch = e.touches[0];
+        const newX = touch.clientX - touchStart.x;
+        const newY = touch.clientY - touchStart.y;
+        
+        // Get boundaries for touch panning
+        const imageContainer = document.getElementById('imageContainer');
+        const modalImage = document.getElementById('modalImage');
+        const containerRect = imageContainer.getBoundingClientRect();
+        const imageRect = modalImage.getBoundingClientRect();
+        
+        const maxOffsetX = Math.max(0, (imageRect.width * currentZoom - containerRect.width) / 2);
+        const maxOffsetY = Math.max(0, (imageRect.height * currentZoom - containerRect.height) / 2);
+        
+        imageOffset.x = Math.max(-maxOffsetX, Math.min(maxOffsetX, newX));
+        imageOffset.y = Math.max(-maxOffsetY, Math.min(maxOffsetY, newY));
+        
+        applyTransform();
+        
+      } else if (e.touches.length === 2) {
+        // Two touches - zooming
+        const touch1 = e.touches[0];
+        const touch2 = e.touches[1];
+        const currentDistance = Math.sqrt(
+          Math.pow(touch2.clientX - touch1.clientX, 2) +
+          Math.pow(touch2.clientY - touch1.clientY, 2)
+        );
+        
+        if (lastTouchDistance > 0) {
+          const scale = currentDistance / lastTouchDistance;
+          currentZoom = Math.max(0.5, Math.min(5, currentZoom * scale));
+          applyTransform();
+        }
+        
+        lastTouchDistance = currentDistance;
+      }
+    }
+
+    function handleTouchEnd(e) {
+      if (e.touches.length === 0) {
+        // All touches ended
+        isTouchDragging = false;
+        lastTouchDistance = 0;
+      } else if (e.touches.length === 1) {
+        // One touch ended, but another might still be active
+        lastTouchDistance = 0;
+      }
+    }
+
+    // Add event listeners
+    function addImageEventListeners() {
+      const imageContainer = document.getElementById('imageContainer');
+      const modalImage = document.getElementById('modalImage');
+      
+      imageContainer.addEventListener('wheel', handleWheel, { passive: false });
+      imageContainer.addEventListener('mousedown', handleMouseDown);
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+      
+      // Touch events
+      imageContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
+      imageContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
+      imageContainer.addEventListener('touchend', handleTouchEnd);
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', handleKeyDown);
+    }
+
+    function removeImageEventListeners() {
+      const imageContainer = document.getElementById('imageContainer');
+      
+      imageContainer.removeEventListener('wheel', handleWheel);
+      imageContainer.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      
+      imageContainer.removeEventListener('touchstart', handleTouchStart);
+      imageContainer.removeEventListener('touchmove', handleTouchMove);
+      imageContainer.removeEventListener('touchend', handleTouchEnd);
+      
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+
+    // Keyboard navigation
+    function handleKeyDown(e) {
+      switch(e.key) {
+        case 'ArrowLeft':
+          previousImage();
+          break;
+        case 'ArrowRight':
+          nextImage();
+          break;
+        case 'Escape':
+          closePhotoModal();
+          break;
+        case '+':
+        case '=':
+          zoomIn();
+          break;
+        case '-':
+          zoomOut();
+          break;
+        case '0':
+          resetZoom();
+          break;
+      }
     }
 
     // Music functionality
@@ -1037,22 +1959,41 @@ author: "Roshan SHrestha"
     // Toggle language selector
     function toggleLanguageSelector() {
       const selector = document.getElementById('languageSelector');
-      selector.style.display = selector.style.display === 'none' ? 'flex' : 'none';
+      const themeToggle = document.querySelector('.theme-toggle');
+      
+      if (selector.style.display === 'none' || selector.style.display === '') {
+        // Opening language selector
+        selector.style.display = 'flex';
+        themeToggle.classList.remove('language-closed');
+        themeToggle.classList.add('language-open');
+      } else {
+        // Closing language selector
+        selector.style.display = 'none';
+        themeToggle.classList.remove('language-open');
+        themeToggle.classList.add('language-closed');
+      }
     }
 
     // Improved language change function
     function changeLanguage(event, lang) {
       currentLanguage = lang;
       const langBtns = document.querySelectorAll('.lang-btn');
+      const themeToggle = document.querySelector('.theme-toggle');
+      
       langBtns.forEach(btn => btn.classList.remove('active'));
       if (event && event.currentTarget) event.currentTarget.classList.add('active');
+      
       // Update all text elements
       allKeys.forEach(key => {
         const el = document.getElementById(key);
         if (el) el.textContent = translations[lang][key];
       });
-      // Hide selector after choosing
+      
+      // Hide selector after choosing and hide theme button
       document.getElementById('languageSelector').style.display = 'none';
+      themeToggle.classList.remove('language-open');
+      themeToggle.classList.add('language-closed');
+      
       // Persist language and reflect in URL
       try {
         localStorage.setItem('lang', lang);
@@ -1070,4 +2011,428 @@ author: "Roshan SHrestha"
         toggleBtn.innerHTML = '<i class="fas fa-music"></i>';
       });
     }
+
+    // Initialize draggable music player
+    function initializeDraggableMusic() {
+      const musicControls = document.getElementById('musicControls');
+      const dragHandle = document.querySelector('.drag-handle');
+      
+      // Load saved position
+      loadMusicPosition();
+      
+      // Add event listeners for dragging
+      dragHandle.addEventListener('mousedown', handleMusicMouseDown);
+      document.addEventListener('mousemove', handleMusicMouseMove);
+      document.addEventListener('mouseup', handleMusicMouseUp);
+      
+      // Touch events for mobile
+      dragHandle.addEventListener('touchstart', handleMusicTouchStart, { passive: false });
+      document.addEventListener('touchmove', handleMusicTouchMove, { passive: false });
+      document.addEventListener('touchend', handleMusicTouchEnd);
+    }
+
+    // Mouse events for dragging music player
+    function handleMusicMouseDown(e) {
+      isMusicDragging = true;
+      musicDragStart.x = e.clientX - musicOffset.x;
+      musicDragStart.y = e.clientY - musicOffset.y;
+      
+      const musicControls = document.getElementById('musicControls');
+      musicControls.classList.add('dragging');
+      e.preventDefault();
+    }
+
+    function handleMusicMouseMove(e) {
+      if (isMusicDragging) {
+        const newX = e.clientX - musicDragStart.x;
+        const newY = e.clientY - musicDragStart.y;
+        
+        // Constrain to viewport
+        const musicControls = document.getElementById('musicControls');
+        const rect = musicControls.getBoundingClientRect();
+        const maxX = window.innerWidth - rect.width;
+        const maxY = window.innerHeight - rect.height;
+        
+        musicOffset.x = Math.max(0, Math.min(maxX, newX));
+        musicOffset.y = Math.max(0, Math.min(maxY, newY));
+        
+        applyMusicPosition();
+        e.preventDefault();
+      }
+    }
+
+    function handleMusicMouseUp(e) {
+      if (isMusicDragging) {
+        isMusicDragging = false;
+        const musicControls = document.getElementById('musicControls');
+        musicControls.classList.remove('dragging');
+        saveMusicPosition();
+        e.preventDefault();
+      }
+    }
+
+    // Touch events for mobile dragging
+    function handleMusicTouchStart(e) {
+      if (e.touches.length === 1) {
+        isMusicDragging = true;
+        musicDragStart.x = e.touches[0].clientX - musicOffset.x;
+        musicDragStart.y = e.touches[0].clientY - musicOffset.y;
+        
+        const musicControls = document.getElementById('musicControls');
+        musicControls.classList.add('dragging');
+        e.preventDefault();
+      }
+    }
+
+    function handleMusicTouchMove(e) {
+      if (isMusicDragging && e.touches.length === 1) {
+        const newX = e.touches[0].clientX - musicDragStart.x;
+        const newY = e.touches[0].clientY - musicDragStart.y;
+        
+        // Constrain to viewport
+        const musicControls = document.getElementById('musicControls');
+        const rect = musicControls.getBoundingClientRect();
+        const maxX = window.innerWidth - rect.width;
+        const maxY = window.innerHeight - rect.height;
+        
+        musicOffset.x = Math.max(0, Math.min(maxX, newX));
+        musicOffset.y = Math.max(0, Math.min(maxY, newY));
+        
+        applyMusicPosition();
+        e.preventDefault();
+      }
+    }
+
+    function handleMusicTouchEnd(e) {
+      if (isMusicDragging) {
+        isMusicDragging = false;
+        const musicControls = document.getElementById('musicControls');
+        musicControls.classList.remove('dragging');
+        saveMusicPosition();
+        e.preventDefault();
+      }
+    }
+
+    // Apply music player position
+    function applyMusicPosition() {
+      const musicControls = document.getElementById('musicControls');
+      musicControls.style.left = musicOffset.x + 'px';
+      musicControls.style.top = musicOffset.y + 'px';
+    }
+
+    // Save music player position
+    function saveMusicPosition() {
+      localStorage.setItem('musicPosition', JSON.stringify(musicOffset));
+    }
+
+    // Load music player position
+    function loadMusicPosition() {
+      const saved = localStorage.getItem('musicPosition');
+      if (saved) {
+        try {
+          musicOffset = JSON.parse(saved);
+          applyMusicPosition();
+        } catch (e) {
+          // Use default position if saved data is invalid
+          musicOffset = { x: 20, y: 20 };
+        }
+      }
+    }
+
+    // Initialize scroll behavior for language button
+    function initializeScrollBehavior() {
+      const langToggleBtn = document.querySelector('.lang-toggle-btn');
+      const themeToggleBtn = document.querySelector('.theme-toggle');
+      
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Hide both buttons when scrolling down (instant)
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+          langToggleBtn.classList.add('hidden');
+          // Force hide theme button by adding hidden class and removing conflicting classes
+          themeToggleBtn.classList.add('hidden');
+          themeToggleBtn.classList.remove('language-open', 'language-closed');
+        }
+        // Show both buttons when scrolling up (instant)
+        else if (scrollTop < lastScrollTop) {
+          langToggleBtn.classList.remove('hidden');
+          // Show theme button and restore proper state
+          themeToggleBtn.classList.remove('hidden');
+          // Check if language selector is open to determine proper state
+          const languageSelector = document.getElementById('languageSelector');
+          if (languageSelector && languageSelector.style.display === 'flex') {
+            themeToggleBtn.classList.add('language-open');
+          } else {
+            themeToggleBtn.classList.add('language-closed');
+          }
+        }
+        
+        // Update last scroll position
+        lastScrollTop = scrollTop;
+      }, { passive: true });
+    }
+
+    // Love Panda Game Functions
+    function initializeLovePandaGame() {
+      const startBtn = document.getElementById('startGame');
+      const resetBtn = document.getElementById('resetGame');
+      
+      startBtn.addEventListener('click', startGame);
+      resetBtn.addEventListener('click', resetGame);
+      
+      // Keyboard controls
+      document.addEventListener('keydown', handleGameKeyPress);
+      
+      // Update displays
+      document.getElementById('highScore').textContent = gameState.highScore;
+      document.getElementById('gamesPlayed').textContent = gameState.gamesPlayed;
+      document.getElementById('totalHearts').textContent = gameState.totalHearts;
+      
+      // Place panda at start position
+      placePanda();
+      placeHeart();
+    }
+
+    function startGame() {
+      gameState.isPlaying = true;
+      gameState.score = 0;
+      
+      // Hide instructions
+      document.getElementById('gameInstructions').style.display = 'none';
+      
+      // Update UI
+      updateGameUI();
+      
+      // Place heart at random position
+      placeHeart();
+    }
+
+    function resetGame() {
+      gameState.isPlaying = false;
+      gameState.score = 0;
+      gameState.pandaX = 50;
+      gameState.pandaY = 50;
+      
+      // Show instructions
+      document.getElementById('gameInstructions').style.display = 'block';
+      
+      // Reset positions
+      placePanda();
+      placeHeart();
+      
+      // Update UI
+      updateGameUI();
+    }
+
+    function placePanda() {
+      const panda = document.getElementById('panda');
+      panda.style.left = gameState.pandaX + 'px';
+      panda.style.top = gameState.pandaY + 'px';
+    }
+
+    function placeHeart() {
+      const heart = document.getElementById('heart');
+      const gameBoard = document.getElementById('gameBoard');
+      const boardRect = gameBoard.getBoundingClientRect();
+      
+      // Random position within game board (accounting for element size)
+      const maxX = boardRect.width - 60;
+      const maxY = boardRect.height - 60;
+      
+      const x = Math.floor(Math.random() * maxX);
+      const y = Math.floor(Math.random() * maxY);
+      
+      heart.style.left = x + 'px';
+      heart.style.top = y + 'px';
+    }
+
+    function handleGameKeyPress(e) {
+      if (!gameState.isPlaying) {
+        if (e.code === 'Space') {
+          e.preventDefault();
+          startGame();
+        }
+        return;
+      }
+      
+      const gameBoard = document.getElementById('gameBoard');
+      const boardRect = gameBoard.getBoundingClientRect();
+      const maxX = boardRect.width - 60;
+      const maxY = boardRect.height - 60;
+      const moveDistance = 15;
+      
+      switch(e.code) {
+        case 'ArrowUp':
+          e.preventDefault();
+          gameState.pandaY = Math.max(0, gameState.pandaY - moveDistance);
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          gameState.pandaY = Math.min(maxY, gameState.pandaY + moveDistance);
+          break;
+        case 'ArrowLeft':
+          e.preventDefault();
+          gameState.pandaX = Math.max(0, gameState.pandaX - moveDistance);
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          gameState.pandaX = Math.min(maxX, gameState.pandaX + moveDistance);
+          break;
+        case 'Space':
+          e.preventDefault();
+          if (!gameState.isPlaying) {
+            startGame();
+          }
+          break;
+      }
+      
+      // Update panda position
+      placePanda();
+      
+      // Check collision
+      checkCollision();
+    }
+
+    function checkCollision() {
+      const panda = document.getElementById('panda');
+      const heart = document.getElementById('heart');
+      
+      const pandaRect = panda.getBoundingClientRect();
+      const heartRect = heart.getBoundingClientRect();
+      
+      // Check if panda touches heart
+      if (pandaRect.left < heartRect.right &&
+          pandaRect.right > heartRect.left &&
+          pandaRect.top < heartRect.bottom &&
+          pandaRect.bottom > heartRect.top) {
+        
+        // Collect heart
+        gameState.score++;
+        gameState.totalHearts++;
+        
+        // Update UI
+        updateGameUI();
+        
+        // Create collection effect
+        createCollectionEffect(heartRect.left, heartRect.top);
+        
+        // Check win condition
+        if (gameState.score >= 10) {
+          winGame();
+        } else {
+          // Place new heart
+          placeHeart();
+        }
+      }
+    }
+
+    function createCollectionEffect(x, y) {
+      const effect = document.createElement('div');
+      effect.textContent = '💖';
+      effect.style.position = 'fixed';
+      effect.style.left = x + 'px';
+      effect.style.top = y + 'px';
+      effect.style.fontSize = '2rem';
+      effect.style.pointerEvents = 'none';
+      effect.style.zIndex = '20';
+      effect.style.animation = 'collectionEffect 1s ease-out forwards';
+      
+      document.body.appendChild(effect);
+      
+      setTimeout(() => {
+        effect.remove();
+      }, 1000);
+    }
+
+    function updateGameUI() {
+      document.getElementById('score').textContent = `Hearts Collected: ${gameState.score}`;
+      document.getElementById('totalHearts').textContent = gameState.totalHearts;
+    }
+
+    function winGame() {
+      gameState.isPlaying = false;
+      gameState.gamesPlayed++;
+      
+      // Update high score
+      if (gameState.score > gameState.highScore) {
+        gameState.highScore = gameState.score;
+        localStorage.setItem('pandaGameHighScore', gameState.highScore);
+        document.getElementById('highScore').textContent = gameState.highScore;
+      }
+      
+      // Save stats
+      localStorage.setItem('pandaGamesPlayed', gameState.gamesPlayed);
+      localStorage.setItem('pandaTotalHearts', gameState.totalHearts);
+      document.getElementById('gamesPlayed').textContent = gameState.gamesPlayed;
+      
+      // Show win message
+      showWinMessage();
+    }
+
+    function showWinMessage() {
+      const winModal = document.createElement('div');
+      winModal.style.position = 'fixed';
+      winModal.style.top = '0';
+      winModal.style.left = '0';
+      winModal.style.width = '100%';
+      winModal.style.height = '100%';
+      winModal.style.background = 'rgba(0, 0, 0, 0.8)';
+      winModal.style.display = 'flex';
+      winModal.style.justifyContent = 'center';
+      winModal.style.alignItems = 'center';
+      winModal.style.zIndex = '2000';
+      winModal.style.backdropFilter = 'blur(10px)';
+      
+      const winContent = document.createElement('div');
+      winContent.style.background = 'linear-gradient(135deg, #fff5f5, #ffe8e8)';
+      winContent.style.color = '#333';
+      winContent.style.padding = '40px';
+      winContent.style.borderRadius = '25px';
+      winContent.style.textAlign = 'center';
+      winContent.style.maxWidth = '500px';
+      winContent.style.boxShadow = '0 25px 70px rgba(0, 0, 0, 0.3)';
+      winContent.style.border = '3px solid var(--rose-pink)';
+      
+      winContent.innerHTML = `
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--rose-red); margin-bottom: 20px;">
+          🎉 Panda Found True Love! 💕🐼
+        </h2>
+        <p style="font-size: 1.2rem; margin: 10px 0; color: #555;">
+          Congratulations! The panda collected 10 hearts and found true love!
+        </p>
+        <div style="font-size: 2rem; font-weight: 700; color: var(--gold); margin: 20px 0;">
+          💖 True Love Achieved! 💖
+        </div>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 30px;">
+          The panda's journey to find love is complete! ❤️
+        </p>
+        <button class="game-btn" onclick="this.parentElement.parentElement.remove(); resetGame();" style="margin: 10px;">
+          🔄 Play Again
+        </button>
+        <button class="game-btn" onclick="this.parentElement.parentElement.remove();" style="background: #666; margin: 10px;">
+          ❌ Close
+        </button>
+      `;
+      
+      winModal.appendChild(winContent);
+      document.body.appendChild(winModal);
+    }
+
+    // Add CSS animations for game effects
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes collectionEffect {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.5); opacity: 0.8; }
+        100% { transform: scale(0.5) translateY(-50px); opacity: 0; }
+      }
+      
+      @keyframes levelUpEffect {
+        0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+        50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+        100% { transform: translate(-50%, -50%) scale(1) translateY(-30px); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
   
