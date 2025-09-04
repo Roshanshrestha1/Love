@@ -1862,7 +1862,7 @@ author: "Roshan SHrestha"
       const trackTitle = document.getElementById('currentTrackTitle');
       // Hardcoded music tracks for static hosting (GitHub Pages compatible)
       let musicTracks = [
-        { src: 'music/7%20years.mp3', title: '7 Years' },
+        { src: 'music/7_20years.mp3', title: '7 Years' },
         { src: 'music/Par%20khe%20ra%20.mp3', title: 'Par khe ra' },
         { src: 'music/Thu%20Hea%20Kha.mp3', title: 'Thu Hea Kha' }
       ];
