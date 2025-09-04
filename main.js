@@ -351,6 +351,9 @@ Ton mari qui t'aime pour toujours 💑👫💍💖✨❤️🌹🌙🕊️💌`
       // Initialize scroll behavior for language button
       initializeScrollBehavior();
       
+      // Initialize music system
+      initializeMusic();
+      
       // Initialize draggable music player
       initializeDraggableMusic();
       
@@ -1860,14 +1863,16 @@ author: "Roshan SHrestha"
       const prevBtn = document.getElementById('prevTrackBtn');
       const nextBtn = document.getElementById('nextTrackBtn');
       const trackTitle = document.getElementById('currentTrackTitle');
+      
       // Hardcoded music tracks for static hosting (GitHub Pages compatible)
       let musicTracks = [
-        { src: 'music/7%20years.mp3', title: '7 Years' },
-        { src: 'music/Par%20khe%20ra%20.mp3', title: 'Par khe ra' },
-        { src: 'music/Thu%20Hea%20Kha.mp3', title: 'Thu Hea Kha' }
+        { src: 'music/7_years.mp3', title: '7 Years' },
+        { src: 'music/Par khe ra .mp3', title: 'Par khe ra' },
+        { src: 'music/Thu Hea Kha.mp3', title: 'Thu Hea Kha' }
       ];
       window.musicTracks = musicTracks;
       window.currentTrackIndex = 0;
+      
       function loadTrack(index, autoPlay = true) {
         if (!musicTracks[index]) {
           trackTitle.textContent = 'No songs found';
@@ -1878,16 +1883,34 @@ author: "Roshan SHrestha"
         trackTitle.textContent = musicTracks[index].title;
         music.load();
         localStorage.setItem('lastMusicIndex', index);
+        
+        // Set start time to 10 seconds for 7 Years song
+        if (musicTracks[index].title === '7 Years') {
+          music.addEventListener('loadedmetadata', function() {
+            music.currentTime = 10; // Start from 10 seconds
+          }, { once: true });
+        }
+        
         if (autoPlay) {
-          music.play().catch(()=>{});
+          // Try to play music with user interaction fallback
+          const playPromise = music.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.log('Autoplay prevented, waiting for user interaction');
+              // Music will start when user clicks play button
+            });
+          }
         }
       }
+      
       // Set initial volume
       music.volume = 0.5;
+      
       // Volume control
       volumeSlider.addEventListener('input', function() {
         music.volume = this.value;
       });
+      
       // Update icon based on music state
       function updateMusicIcon() {
         if (music.paused) {
@@ -1901,9 +1924,11 @@ author: "Roshan SHrestha"
           trackTitle.textContent = 'No songs found';
         }
       }
+      
       // Listen for play/pause events to update icon
       music.addEventListener('play', updateMusicIcon);
       music.addEventListener('pause', updateMusicIcon);
+      
       // Next/Prev track
       window.playNextTrack = function() {
         if (!musicTracks.length) return;
@@ -1911,19 +1936,51 @@ author: "Roshan SHrestha"
         loadTrack(window.currentTrackIndex, true);
         updateMusicIcon();
       };
+      
       window.playPrevTrack = function() {
         if (!musicTracks.length) return;
         window.currentTrackIndex = (window.currentTrackIndex - 1 + musicTracks.length) % musicTracks.length;
         loadTrack(window.currentTrackIndex, true);
         updateMusicIcon();
       };
+      
       // Initial icon and track (pick random on each load)
       if (musicTracks.length > 0) {
         window.currentTrackIndex = Math.floor(Math.random() * musicTracks.length);
         loadTrack(window.currentTrackIndex, true);
         updateMusicIcon();
+        
+        // Try to start playing immediately
+        setTimeout(() => {
+          if (music.paused) {
+            music.play().catch(error => {
+              console.log('Autoplay prevented, music will start when user interacts');
+            });
+          }
+        }, 100);
       } else {
         trackTitle.textContent = 'No songs found';
+      }
+    }
+
+    // Function to start music when user interacts (after autoplay is blocked)
+    window.startMusicOnUserInteraction = function() {
+      const music = document.getElementById('bgMusic');
+      const toggleBtn = document.getElementById('musicToggle');
+      
+      if (music.paused) {
+        // Set start time to 10 seconds for 7 Years song
+        if (window.musicTracks && window.currentTrackIndex !== undefined && 
+            window.musicTracks[window.currentTrackIndex].title === '7 Years') {
+          music.currentTime = 10; // Start from 10 seconds
+        }
+        
+        music.play().then(() => {
+          toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
+          console.log('Music started after user interaction');
+        }).catch(error => {
+          console.log('Failed to start music:', error);
+        });
       }
     }
 
@@ -1932,6 +1989,12 @@ author: "Roshan SHrestha"
       const music = document.getElementById('bgMusic');
       const toggleBtn = document.getElementById('musicToggle');
       if (music.paused) {
+        // Set start time to 10 seconds for 7 Years song
+        if (window.musicTracks && window.currentTrackIndex !== undefined && 
+            window.musicTracks[window.currentTrackIndex].title === '7 Years') {
+          music.currentTime = 10; // Start from 10 seconds
+        }
+        
         music.play().then(() => {
           toggleBtn.innerHTML = '<i class=\'fas fa-pause\'></i>';
         });
